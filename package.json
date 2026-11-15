@@ -1,18 +1,29 @@
 {
-  "name": "Branding skills",
+  "name": "branding-skills",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
-  "homepage": "",
+  "description": "Interview-first branding skills for Codex, Claude Code, and Markdown-capable agents, with detailed prompts for logos, mockups, campaigns, guidelines, and presentations.",
+  "keywords": [
+    "branding",
+    "brand-identity",
+    "brand-guidelines",
+    "logo-design",
+    "design-prompts",
+    "image-generation",
+    "arabic-branding",
+    "egyptian-brands",
+    "codex-skills",
+    "claude-code-skills"
+  ],
+  "homepage": "https://github.com/mostafaibrahem847-sudo/Branding-skills",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/mostafaibrahem847-sudo/Branding-skills/issues"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/mostafaibrahem847-sudo/Branding-skills.git"
   },
   "license": "",
-  "author": "",
+  "author": "mustafa2004",
   "files": [
     "skills"
   ],

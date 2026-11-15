@@ -57,13 +57,39 @@ Copy-Item skills/* .claude/skills/ -Recurse -Force
 
 ### Install from npm
 
-The npm package name is not set or published yet. After the maintainer fills in `package.json`, chooses a license, and publishes the package, install it with the actual package name:
+After `branding-skills` is published, install it from your project root:
 
 ```bash
-npm install --save-dev @YOUR_NPM_USERNAME/branding-skills
+npm install --save-dev branding-skills
 ```
 
-The package contains the Markdown skills under `node_modules/@YOUR_NPM_USERNAME/branding-skills/skills/`. To make them discoverable by Claude Code, copy those skill folders into `.claude/skills/` as shown above. Replace the placeholder scope with the final npm username or organization before publishing and updating this section.
+The package contains the Markdown skills under `node_modules/branding-skills/skills/`. For Codex or another Markdown-capable agent, ask it to read `node_modules/branding-skills/skills/lets-brand/SKILL.md` and follow the workflow. For Claude Code project-level discovery, copy the installed skills into `.claude/skills/`.
+
+PowerShell:
+
+```powershell
+New-Item -ItemType Directory -Force .claude/skills | Out-Null
+Copy-Item node_modules/branding-skills/skills/* .claude/skills/ -Recurse -Force
+```
+
+macOS/Linux:
+
+```bash
+mkdir -p .claude/skills
+cp -R node_modules/branding-skills/skills/* .claude/skills/
+```
+
+### Publish to npm (maintainers)
+
+From the package root, after completing the package metadata and selecting a license that covers the collection:
+
+```bash
+npm login --auth-type=web
+npm whoami
+npm publish
+```
+
+`branding-skills` is an unscoped package name, so npm publishes it publicly. See [npm's publishing guide](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages/).
 
 ## Start a branding session
 
@@ -119,6 +145,4 @@ project-name/
 
 ## Package notes
 
-This collection is made of Markdown instructions and references. It has no runtime dependencies or build step. The root `package.json` is a publishing template: fill the package name, description, author, repository URL, and license before publishing. The npm install command above uses a placeholder until the package has a final name and is publicly available.
-
-The skills include adapted material as credited in their files. Choose and declare a license that covers the complete collection before redistributing it through npm.
+This collection is made of Markdown instructions and references. It has no runtime dependencies or build step. The package metadata and GitHub links are set in the root `package.json`. The skills include adapted material as credited in their files, so choose and declare a license that covers the complete package before publishing it to npm.
