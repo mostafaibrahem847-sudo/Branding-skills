@@ -1,0 +1,20 @@
+{
+  "name": "Branding skills",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "",
+  "bugs": {
+    "url": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "",
+  "author": "",
+  "files": [
+    "skills"
+  ],
+  "private": false
+}
