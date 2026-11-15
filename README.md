@@ -56,10 +56,11 @@ Copy-Item skills/* .claude/skills/ -Recurse -Force
 Run these commands from the root of the project where you want to use the skills—not from the `branding-skills` source repository:
 
 ```bash
-npm install --save-dev branding-skills
-npx --yes skills experimental_sync -y
+npm i branding-skills
 ```
-
+```bash
+npx skills add https://github.com/mostafaibrahem847-sudo/Branding-skills
+```
 The first command installs `branding-skills`. The second runs the Skills CLI and registers the package's skills with detected agents. The npm-package sync workflow is currently experimental; see the [Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md).
 
 `skills/` is a folder inside the `branding-skills` package, not a separate npm package. Install `branding-skills`, then let the Skills CLI discover and link its skills.
@@ -67,8 +68,8 @@ The first command installs `branding-skills`. The second runs the Skills CLI and
 To update an existing installation to the newest published version, run this from the consuming project root:
 
 ```bash
-npm install --save-dev branding-skills@latest
-npx --yes skills experimental_sync -y
+npm i branding-skills
+npx skills add https://github.com/mostafaibrahem847-sudo/Branding-skills
 ```
 
 ## Workflow
