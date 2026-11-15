@@ -1,30 +1,37 @@
 # Visual Reference Analysis Workflow
 
-Use this workflow when the user asks for inspiration research, when a project's direction is unclear, or when a skill requests a precedent scan. The [Brand Design Reference Library](brand-design-reference-library.md) contains 60 general/global starting examples; the [Arabic Brand Design Reference Library](arabic-brand-design-reference-library.md) adds 50 projects, with an Egyptian majority.
+Use this workflow when the user asks for inspiration research, when a project's direction is unclear, or when a skill requests a precedent scan. A complete `lets-brand` prompt pack that includes mockups and every direct mockup-prompting task requires **five distinct, visually inspected global references and five distinct, visually inspected Arabic-market references**. The [Brand Design Reference Library](brand-design-reference-library.md) contains 60 general/global starting examples; the [Arabic Brand Design Reference Library](arabic-brand-design-reference-library.md) adds 50 projects, with an Egyptian majority.
 
 ## Research responsibly
 
-1. Search public case pages, studio portfolios, design platforms, award archives, or official brand pages. Prefer a credited case study over an unattributed image repost. For Arabic-market projects, identify the specific country, city, script/dialect, audience, and market from the source instead of treating the region as one design context.
-2. Use the source page itself where possible. Search snippets and thumbnails can identify a candidate, but they are not enough to support detailed claims about its design.
-3. Record the project, designer/studio when credited, direct URL, date if stated, project type, and whether the page labels it as commissioned, conceptual, or unclear.
-4. For a broad research request, count distinct projects rather than search results. De-duplicate the same project when it appears on several sites. State how many unique projects and sources were reviewed.
-5. Do not imply that a portfolio project was launched, successful, or commercially proven unless the source establishes that.
-6. Do not download, embed, or redistribute artwork without an appropriate right to do so. For written research, link the source and describe the transferable design principle.
-7. Do not sign in, bypass access controls, or make social posts, comments, follows, or other write actions. If a page is inaccessible, record that limit and use public alternatives.
+1. For required mockup research, select candidates from both reference libraries, then open their direct source pages. Prefer credited case studies, studio portfolios, or official brand pages over unattributed reposts.
+2. Inspect the actual identity/mockup images on each source page. A search snippet, text summary, thumbnail, title, or library description alone does not count as visual inspection or toward the 5+5 minimum.
+3. Use native public search/read tools first where available; activate/follow the `agent-reach` skill for supported channels or when native access is missing or incomplete. Use an image-capable browser or visual inspection tool when image pixels/layout are not available in text output. Agent Reach is read-only; follow its channel, login, rate-limit, and platform-block rules.
+4. For Arabic-market projects, identify the specific country/city, script/dialect, audience, and market from the source. Do not treat Arabic-speaking markets as one design context.
+5. Record the project, credited designer/studio, direct URL, date if stated, project type, commissioned/concept/unclear status, whether the page loaded, and whether the relevant images were visually inspected.
+6. Count distinct projects, not URLs or search results. De-duplicate projects repeated across sites. For a complete mockup pack, document at least five visually inspected global projects and five visually inspected Arabic-market projects. State the counts separately.
+7. Do not imply that a portfolio project was launched, successful, or commercially proven unless the source establishes that.
+8. Do not download, embed, or redistribute artwork without an appropriate right to do so. Link the source and describe transferable principles instead of reproducing the imagery.
+9. Do not sign in, bypass access controls, or make social posts, comments, follows, or other write actions. If a page is inaccessible, try a different relevant library entry. If either group remains below five, report the exact limit and do not claim a completed reference scan.
+
+When visual access or Agent Reach is unavailable, add this exact note to `prompts.md` and keep affected prompt decisions provisional:
+
+> NOTE: Use the Agent Reach skill to access and visually inspect the reference URLs before finalizing these prompts.
 
 ## Precedent card
 
 For each useful example, write:
 
 - Reference and direct source URL
+- Access status: opened / inaccessible; visual inspection: yes / no
 - Context: category, audience, country/region, and channel if the source states them
-- Observation: what is visibly or explicitly present
+- Observation: what is visibly or explicitly present in the source images/page
 - Interpretation: why that choice might work for its stated brief
 - Transferable method: a general move that could be useful elsewhere
 - Originality boundary: the named element to avoid copying
 - Test: one real-size, real-material, or alternate-channel check
 
-Keep observations and interpretations separate. If a palette, typeface, or visual detail cannot be confirmed from the source, say so instead of guessing.
+Keep observations and interpretations separate. If a palette, typeface, or visual detail cannot be confirmed from the source, say so instead of guessing. Do not count a text-only Agent Reach result as visual inspection.
 
 ## Review rubric
 

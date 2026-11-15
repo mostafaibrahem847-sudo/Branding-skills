@@ -2,7 +2,7 @@
 
 # 🎨 Branding Skills
 
-### An interview-first branding workflow for AI coding agents
+### An interview-first branding workflow for AI agents
 
 Create a clear brand brief, then turn it into detailed, production-ready prompts for logos, mockups, campaigns, visual guidelines, and presentations.
 
@@ -17,9 +17,9 @@ Create a clear brand brief, then turn it into detailed, production-ready prompts
 
 ## Overview
 
-Branding Skills is a collection of seven reusable skills for Codex, Claude Code, and other agents that can read Markdown. It helps an agent understand a brand before preparing detailed prompts for image-generation tools or coding agents.
+Branding Skills is a collection of seven reusable skills for Codex, Claude Code, and other agents that can read Markdown. It interviews the user, locks the brand brief, researches real visual references, and prepares detailed prompts for image-generation tools or coding agents.
 
-> **Prompt-first by design:** the default deliverable is a copy-ready prompt pack. The agent creates images, builds the HTML presentation, or writes a complete guidelines document only when you ask for that deliverable.
+> **File-first by design:** during “Let's brand,” the agent asks questions and confirms the brief in chat, then writes `brand identity.txt` only if it is missing and saves all requested prompts in `prompts.md`. It does not paste the prompt pack into chat. Images, HTML, and guideline documents are created only when you explicitly request those artifacts.
 
 ## Why use it
 
@@ -56,32 +56,40 @@ Copy-Item skills/* .claude/skills/ -Recurse -Force
 Run these commands from the root of the project where you want to use the skills—not from the `branding-skills` source repository:
 
 ```bash
-npm i branding-skills
-npx skills add https://github.com/mostafaibrahem847-sudo/Branding-skills
+npm install --save-dev branding-skills
+npx --yes skills experimental_sync -y
 ```
 
 The first command installs `branding-skills`. The second runs the Skills CLI and registers the package's skills with detected agents. The npm-package sync workflow is currently experimental; see the [Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md).
 
 `skills/` is a folder inside the `branding-skills` package, not a separate npm package. Install `branding-skills`, then let the Skills CLI discover and link its skills.
 
+To update an existing installation to the newest published version, run this from the consuming project root:
+
+```bash
+npm install --save-dev branding-skills@latest
+npx --yes skills experimental_sync -y
+```
+
 ## Workflow
 
-1. **Audit** the existing logo, brief, assets, guidelines, approved copy, and previous decisions.
+1. **Audit** `brand identity.txt`, the existing logo, assets, guidelines, approved copy, and previous decisions.
 2. **Interview** the user about decision-critical gaps: offer, market, audience, brand story, language and dialect, colors, assets, channels, and desired deliverables.
 3. **Confirm** a concise brand summary. Reuse known facts; do not ask the user to repeat them.
-4. **Prepare** only the requested prompts, grounded in the approved brief and available assets.
-5. **Review** each prompt or result with the user before moving to another production stage.
+4. **Create the identity file only if missing.** Preserve an existing `brand identity.txt`; after approval, create it only when absent, including the exact approved colors and their roles.
+5. **Research before prompts.** For mockup work, open and visually inspect five distinct global and five distinct Arabic-market reference projects before drafting.
+6. **Write `prompts.md`.** Put every requested prompt in this file, with source links and observations. Keep prompt contents out of chat.
 
-The workflow does not invent names, claims, colors, copy, mockup types, or cultural details. If an unknown detail could materially change the result, the agent asks before proceeding.
+The workflow does not invent names, claims, colors, copy, mockup types, or cultural details. If an unknown detail could materially change the result, the agent asks before proceeding. If reference images cannot be accessed, the agent adds the note `NOTE: Use the Agent Reach skill to access and visually inspect the reference URLs before finalizing these prompts.` and identifies what remains unverified.
 
 ## The seven skills
 
 | Skill | What it does |
 |---|---|
-| [`lets-brand`](skills/lets-brand/SKILL.md) | Leads the interview, locks the brief, and assembles the requested prompt pack. |
-| [`brand-identity`](skills/brand-identity/SKILL.md) | Builds a clear identity brief from the brand story, audience, and visual direction. |
+| [`lets-brand`](skills/lets-brand/SKILL.md) | Leads the interview, protects the identity file, researches references, and writes the prompt pack. |
+| [`brand-identity`](skills/brand-identity/SKILL.md) | Builds the approved identity brief and exact color palette in `brand identity.txt` when absent. |
 | [`logo-prompting`](skills/logo-prompting/SKILL.md) | Writes prompts for logo concepts, refinement, and visual logo-guideline boards. |
-| [`mockup-prompting`](skills/mockup-prompting/SKILL.md) | Plans relevant physical, product, and digital touchpoints and writes their prompts. |
+| [`mockup-prompting`](skills/mockup-prompting/SKILL.md) | Visually researches global and Arabic case studies, then writes prompts for relevant mockups. |
 | [`brand-presentation`](skills/brand-presentation/SKILL.md) | Prepares a coding-agent prompt for a standalone HTML brand presentation. |
 | [`banner-design`](skills/banner-design/SKILL.md) | Creates prompts for posters, launches, social posts, ads, and web heroes. |
 | [`brand-guidelines-doc`](skills/brand-guidelines-doc/SKILL.md) | Prepares prompts for a practical written guide or visual guidelines board. |
@@ -114,18 +122,23 @@ Choose only the materials relevant to the brand and project:
 - [Arabic Brand Design Reference Library](skills/shared-references/arabic-brand-design-reference-library.md) — 50 Arabic-market projects: 36 Egypt-centered examples and 14 from Saudi Arabia, the UAE, and Lebanon.
 - [Visual Analysis Workflow](skills/shared-references/visual-analysis-workflow.md) — a method for checking sources and separating observation from interpretation.
 
+For mockup work, the agent must open and visually inspect at least **five global and five Arabic-market projects** from these libraries. It records direct links, observations, visual-inspection status, transferable methods, and what must not be copied in `prompts.md`. Search snippets, titles, and text-only summaries do not count as image inspection. The agent follows the `agent-reach` skill for source access; if the images remain unavailable, it adds the Agent Reach note above and marks the affected prompts provisional.
+
+The Agent Reach skill is a companion capability and may not be installed in every agent environment. When it is unavailable, the agent may use its native read-only web and visual tools. If it still cannot open and inspect the source images, it must report that limitation instead of claiming the reference scan is complete.
+
 Some references are self-published, conceptual, or unclear about launch status. The libraries label known uncertainty and link to public case pages. Use references to study design methods; do not copy another brand's logo, palette, typeface, illustration, layout, or signature device.
 
 ## Recommended project structure
 
 ```text
 project-name/
-├── AGENTS.md or brief.md          # approved brand brief
+├── AGENTS.md                      # project instructions, if needed
+├── brand identity.txt             # approved identity; create only if absent
+├── prompts.md                     # requested prompt pack; no prompts pasted in chat
 ├── assets/
 │   ├── logo/                      # approved logo files
 │   └── mockups/                   # user-approved mockup images
 └── output/
-    ├── prompts/                   # prompt packs, when requested
     ├── brand-presentation.html    # standalone HTML, when requested
     └── banners/                   # campaign exports, when requested
 ```
@@ -140,17 +153,6 @@ project-name/
 
 The published `1.0.0` package currently has no license declared in `package.json`. Add the selected SPDX license before a future release. The skills include adapted material credited in their files, so make sure the chosen license covers the complete collection.
 
-## Maintainer release
-
-This section is for maintainers publishing future npm versions. End users installing the skills can skip it. Increment the package version and complete the metadata before publishing from the package root:
-
-```bash
-npm login --auth-type=web
-npm whoami
-npm publish
-```
-
-The package name is unscoped, so npm publishes it publicly. See [npm's unscoped package publishing guide](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages/).
 
 ---
 

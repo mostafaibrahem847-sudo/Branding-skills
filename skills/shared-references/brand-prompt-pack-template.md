@@ -1,10 +1,12 @@
 # Brand Prompt Pack Template
 
-Use after the user completes `brand-intake-interview.md` and approves the compact brand lock. This template organizes prompts for an external image generator or coding agent. It does not assume the current agent can create or inspect images.
+Use after the user completes `brand-intake-interview.md` and approves the compact brand lock. For a full brand workflow, create or reuse `brand identity.txt` in the project root and save the complete prompt pack in `prompts.md`. Keep prompt contents in the file; in chat, ask interview questions, show the brief approval summary, and give a concise final file-status note only. This template does not assume the current agent can generate images.
 
 ## Pack cover / input lock
 
 ```text
+IDENTITY FILE: [project-root/brand identity.txt; created only if absent]
+PROMPT FILE: [project-root/prompts.md]
 Brand:
 Approved name and exact spelling by script:
 Offer and category:
@@ -19,6 +21,20 @@ Must preserve:
 Must avoid:
 Open items (do not fill with guesses):
 ```
+
+## Reference research record
+
+For a complete branding pack that includes mockups, inspect at least five distinct global projects from `brand-design-reference-library.md` and five distinct Arabic-market projects from `arabic-brand-design-reference-library.md`. Open each source URL and visually inspect the relevant identity/mockup images. Do not count titles, snippets, text-only summaries, or thumbnails alone. Follow the `agent-reach` skill for supported source access and its read-only/access-limit rules. If either group remains below five visually inspected projects, keep the affected prompts provisional and include:
+
+> NOTE: Use the Agent Reach skill to access and visually inspect the reference URLs before finalizing these prompts.
+
+Add one record per distinct project:
+
+| Region | Project and context | Direct URL | Page opened? | Images visually inspected? | Observation | Transferable method | Do not copy |
+|---|---|---|---|---|---|---|---|
+| Global / Arabic-market | ... | ... | Yes / No | Yes / No | ... | ... | ... |
+
+Separate visible facts from interpretation. Mark conceptual, self-published, or unclear work. Never claim a project launched or succeeded unless the source proves it.
 
 ## One prompt card per deliverable
 
@@ -63,4 +79,4 @@ QUALITY CHECK: [legibility, crop, script, contrast, brand fit, originality, asse
 
 ## Pack closeout
 
-List prompts delivered, attached inputs required, remaining open items, and which prompt should be run first. Keep user approval checkpoints visible between identity, logo, mockup, presentation, campaign, and guideline stages.
+List prompts delivered, attached inputs required, remaining open items, and which prompt should be run first **inside `prompts.md`**. Keep user approval checkpoints visible between identity, logo, mockup, presentation, campaign, and guideline stages. Do not paste the prompts into chat.

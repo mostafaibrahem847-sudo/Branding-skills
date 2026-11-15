@@ -6,7 +6,7 @@ Use this before producing any branding output, including one-off image prompts. 
 
 ### 1. Audit what is already available
 
-Inspect the project folder and user-provided links/files before asking. Look for a locked `AGENTS.md` or `brief.md`, approved logo files and variants, current brand guidelines, palette/type specifications, product or service imagery, existing campaign copy, and earlier approved prompts. Do not infer approval from a file merely existing; check its status or ask.
+Inspect the project folder and user-provided links/files before asking. Look specifically for `brand identity.txt`, `prompts.md`, a locked `AGENTS.md` or `brief.md`, approved logo files and variants, current brand guidelines, palette/type specifications, product or service imagery, existing campaign copy, and earlier approved prompts. If `brand identity.txt` exists, read and preserve it; never make a duplicate or overwrite it. If it is absent, create it only after the user approves the compact brief summary. Do not infer approval from a file merely existing; check its status or ask.
 
 Create a quiet working table with three states:
 
@@ -57,7 +57,7 @@ When several decisions are open, offer 2–3 short, clearly different options wi
 
 ### 4. Lock and show the input summary
 
-Before making the prompt pack, return a concise confirmation block:
+Before making project files, show the user a concise confirmation block. This is a brief summary, not prompt output:
 
 ```text
 Brand / exact scripts:
@@ -82,7 +82,13 @@ Keep open items visible. Ask the user to correct the summary or approve it befor
 - Preserve the user's exact approved Arabic spelling and punctuation. Ask before transliterating or normalizing wording.
 - Ask before inventing a missing name, slogan, product, claim, font, color, mockup type, scene, or deliverable.
 - When the user does not know an answer, show 2–3 grounded directions or label the field open. Get approval before locking a choice.
+- For a “Let's brand” request, ask questions and show only the concise brief summary in chat. Keep copy-ready prompts and long research analysis inside `prompts.md`.
+- If colors are missing, ask for exact colors or offer proposed palettes for approval. Never place unapproved colors in the identity file as locked values or in final prompts.
 
 ## After the interview
 
-Use the approved summary as the single source of truth for every selected prompt. If later answers change it, update the lock first and regenerate only the affected prompts. Confirm before moving to another stage in the full workflow.
+Use the approved summary as the single source of truth for every selected prompt. For a full branding workflow, create `brand identity.txt` in the project root only if absent; if it already exists, use it and do not recreate or overwrite it. Write all requested prompt modules to `prompts.md`, preserving unrelated approved content if that file already exists. If later answers change the brief, update the identity lock only after approval and regenerate only affected prompt sections.
+
+Before mockup prompts, complete the required visual scan: at least five distinct global source pages and five distinct Arabic-market source pages, opened and visually inspected. Follow `../visual-analysis-workflow.md` and the `agent-reach` skill's access rules. If a source image cannot be inspected, it does not count; add the required Agent Reach note to `prompts.md` and leave affected prompts provisional.
+
+After writing files, reply only with a concise completion note and paths. Do not paste prompt contents into chat.

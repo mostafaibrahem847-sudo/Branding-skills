@@ -1,62 +1,99 @@
 ---
 name: lets-brand
-description: Orchestrator for the full branding workflow — interviews the user, locks the brief, and prepares detailed prompts for logo, mockups, campaign posters, story visuals, HTML presentation, and guidelines. Activate when the user says "let's brand [name]", asks to start or refresh a brand, or asks for a full branding prompt pack.
+description: Runs an interview-first branding workflow, researches real visual references, and writes the approved identity and prompt pack to project files. Activate when the user says "let's brand [name]", starts or refreshes a brand, or requests the complete branding prompt pack.
 argument-hint: "[brand-name] [industry] [notes]"
 metadata:
   author: mostafa
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
-# Lets Brand — Full Branding Workflow Orchestrator
+# Lets Brand — Research-Led Branding Workflow
 
-Runs the branding workflow for one brand by interviewing the user, checking supplied assets, locking the brief, then preparing a detailed prompt pack for the requested deliverables. Each sibling skill also works on its own — call it directly when only one stage is needed. Prompt generation is the default handoff: do not assume this agent can generate images or that the user wants HTML/code executed.
+Run the project through an intake interview, a user-approved brand lock, direct reference research, and file-based prompt delivery. This skill coordinates the sibling skills; it does not generate images or execute HTML unless the user explicitly asks for those artifacts.
+
+## Output Contract
+
+- When the user says “Let's brand,” do not answer with prompt text, a prompt preview, or a long design analysis in chat. Begin the interview and ask only decision-critical questions.
+- Show a concise brand-lock summary in chat and wait for the user's approval before writing deliverables.
+- After approval, write the deliverables to the project files: create `brand identity.txt` only when it does not exist, and create or update `prompts.md` with the requested prompt pack.
+- Do not paste the contents of `prompts.md` into chat. After writing, give only a short completion note with the file paths and any real access limitation.
+- If `brand identity.txt` already exists, read and use it; do not create a duplicate or overwrite it. If it conflicts with supplied assets or the user's latest direction, ask before changing it.
 
 ## When to Use
 
-- User says "لِتس براند [اسم]" / "let's brand [name]" / "ابدأ لي مشروع براندينج جديد"
-- A new fake-client or real-client branding project is starting from zero
-- User wants the full pipeline: identity → logo → mockups → presentation → banners → guidelines doc
-- User wants to resume a branding project that already has some assets and continue from where it stopped
-
-## Sibling Skills (invoked in order)
-
-| Order | Skill | Produces |
-|-------|-------|----------|
-| 0 | `../shared-references/brand-intake-interview.md` | Asset audit, focused questions, and a user-approved brand lock before output |
-| 1 | `../brand-identity` | Confirmed brand brief and, when selected, a prompt for story-led visual direction |
-| 2 | `../logo-prompting` | Ready-to-paste prompts for logo concepts/refinement and optional visual logo-guideline boards |
-| 3 | `../mockup-prompting` | Ready-to-paste prompts for user-selected physical and digital touchpoints |
-| 4 | `../brand-presentation` | A detailed prompt for a standalone HTML brand presentation; build only when explicitly requested |
-| 5 | `../banner-design` | Ready-to-paste prompts for selected posters, social/ad banners, and campaign visuals |
-| 6 | `../brand-guidelines-doc` | Prompts for a written guideline document and/or visual guideline board, as selected |
+- User says “Let's brand [name]” / “ابدأ مشروع براندينج”
+- A new client or practice branding project is starting
+- User wants the complete brand prompt pack or wants to resume an existing project
 
 ## Workflow
 
-### Step 1 — Interview and audit before output
-Read `../shared-references/brand-intake-interview.md`. Inspect the project folder, brief, logo, guidelines, exact palette/type, campaign copy, prior approvals, and links before asking anything. Reuse known facts and ask only missing, decision-critical questions. Confirm brand, market, audience, real story, script/dialect, approved assets, constraints, and which prompt modules/formats are wanted. Do not produce even a single prompt until the user has corrected or approved the compact brief summary. Never redo an approved stage without being asked.
+### 1. Audit the project before asking questions
 
-If the user requests visual inspiration or a broad scan, use `../shared-references/visual-analysis-workflow.md` and select relevant projects from both `../shared-references/brand-design-reference-library.md` and `../shared-references/arabic-brand-design-reference-library.md`. Count distinct projects, record direct source links, separate facts from interpretation, and mark self-published or conceptual work. For Arabic-market work, ask which country, city, dialect, and audience norms apply. Do not begin an unnecessary scan and never copy a recognizable design element.
+Read `../shared-references/brand-intake-interview.md`. Inspect the project root and relevant asset folders for:
 
-### Step 2 — Lock the brief, then build the requested prompt pack
-Run `../brand-identity` to confirm name/scripts, offer, market/audience, approved story and claims, personality, exact approved colors, typography/language, approved logo files, channels, and constraints. Do not call proposals “locked” until the user approves them.
+- `brand identity.txt` and `prompts.md`
+- Approved logo files and variants
+- Existing brand guidelines, palette/type specifications, approved copy, products, mockups, and prior approvals
+- Existing reference links and notes
 
-Read `../shared-references/brand-prompt-pack-template.md`. Include only modules the user selected or clearly requested:
+If `brand identity.txt` exists, treat it as the current source of truth after checking its approval status. Never make a second identity file. If it is absent, collect and confirm the brief first; create it only after the user approves the summary. Keep candidate and unresolved details clearly marked.
 
-1. Logo concept/refinement prompt, preserving approved files and exact text.
-2. Optional visual logo-guidelines board prompt (logo usage, color, type, approved rules only).
-3. Mockup prompt for each confirmed touchpoint, matched to the actual business and user-selected setting.
-4. Campaign poster/social/ad banner prompts, with verified dimensions and exact approved copy or blank typesetting areas.
-5. Story-led visual prompts derived from `../brand-identity/references/story-to-visual-prompt.md` and only the confirmed story facts.
-6. HTML presentation build prompt from `../brand-presentation/references/build-prompt.md`.
-7. Optional written brand-guidelines authoring prompt.
+### 2. Interview and lock the brief
 
-Present one organized, copy-ready prompt pack with the brand lock, required reference files to attach, one prompt per distinct deliverable, relevant exclusions, target format, and unresolved items. Image generation and code execution are not implied by the pack. If the user explicitly asks the agent to build HTML or produce another artifact, execute only the selected module using its skill and confirm the result before moving to another production stage.
+Reuse confirmed information and ask only missing or conflicting questions. Cover the brand name and exact scripts, offer, market and audience, story and factual claims, personality, differentiation, approved colors, typography direction, logo assets, channels, touchpoints, deliverables, target tools, and output ratios. Ask which prompt modules the user wants. Do not write or show prompt content during the interview.
 
-### Step 3 — Never skip the brief or interview
-No logo, mockup, poster, story, guideline, or presentation prompt is written before the selected output's required inputs are confirmed. If the user has an existing brief and logo, audit and reuse them; do not restart identity from zero. If any prompt-critical detail is missing, ask before filling it.
+Confirm a compact brand-lock summary in chat. Do not proceed to file output until the user approves it. Do not reopen settled decisions without a conflict or a direct request.
 
-Keep all seven skill folders and `../shared-references/` together in the collection directory. Shared references include the two design libraries, interview, prompt-pack template, and analysis method; this folder is a resource, not another skill.
+### 3. Create `brand identity.txt` only when absent
+
+When the full workflow is requested and no `brand identity.txt` exists, create it in the project root after brief approval. Include:
+
+- Exact brand name and approved spelling in every script
+- Offer, category, market, audience, and language/dialect
+- Story, promise, proof, differentiators, and claims that must not be made
+- Personality and voice
+- Color palette with exact hex values, named roles, and approval status
+- Typography and script behavior
+- Logo files, variants, clear-space or fidelity constraints when known
+- Image direction, approved touchpoints, channel needs, and production limits
+- Must-keep, must-avoid, and unresolved decisions
+- Reference credits or source links that materially informed the brief
+
+If approved colors are missing, ask the user to provide or approve them. Do not treat proposals as locked. Every image prompt must use the approved hex values from this file.
+
+### 4. Research real reference pages before writing prompts
+
+For every full branding pack that includes mockups, complete a reference scan before drafting `prompts.md`:
+
+- Review at least **five distinct global references** from `../shared-references/brand-design-reference-library.md` and at least **five distinct Arabic-market references** from `../shared-references/arabic-brand-design-reference-library.md` — ten distinct projects total.
+- Select projects relevant to the confirmed sector, touchpoints, and market. For Arabic references, prefer the user's target country and audience when the library permits.
+- Open each direct source URL. Inspect the actual identity/mockup images, not only the library description, search snippet, thumbnail, or page title. A reference counts toward the minimum only when the relevant visuals were accessible and inspected.
+- Activate and follow the `agent-reach` skill for access to source pages when available. Follow its routing and stop rules; do not bypass logins, access controls, rate limits, or platform blocks. Use an image-capable browser when the page text alone cannot reveal the visual details.
+- Record the source URL, project/context, what was visibly observed, which touchpoint it informs, a transferable method, and what must not be copied. Separate observation from interpretation.
+
+If a link is unavailable, try another relevant entry from the same library. If fewer than five visually inspected sources from either library remain, do not claim the minimum was met. Add this exact note to `prompts.md` and leave affected visual decisions provisional:
+
+> NOTE: Use the Agent Reach skill to access and visually inspect the reference URLs before finalizing these prompts.
+
+Also state which links could not be inspected and why, without repeatedly retrying blocked or rate-limited sources.
+
+### 5. Assemble `prompts.md`
+
+Read `../shared-references/brand-prompt-pack-template.md` and invoke the relevant sibling skills. Save the complete requested prompt set as `prompts.md` in the project root. If it already exists, preserve prior approved content and update only the requested sections; do not erase useful prompt history without asking.
+
+Include:
+
+1. A short input lock referencing `brand identity.txt` and listing the exact files the user must attach.
+2. A reference review table with the minimum 5 global + 5 Arabic links, visual observations, transferable lessons, and originality boundaries. Include the exact Agent Reach note when the access/visual-inspection threshold is not met.
+3. One detailed, ready-to-paste prompt per requested deliverable: logo/refinement, mockups, posters/banners, story-led visuals, visual or written guidelines, and HTML presentation as selected.
+4. Exact approved hex colors, exact approved copy/spelling, composition, assets, output size/ratio, exclusions, quality checks, and unresolved inputs for every relevant prompt.
+
+Include only the requested or brief-relevant modules. Do not copy recognizable logos, palettes, typefaces, layouts, illustrations, or signature devices from references. Never invent missing details.
+
+### 6. Close out without returning prompt text in chat
+
+Confirm that `brand identity.txt` exists or was intentionally left untouched because it already existed, and that `prompts.md` contains the approved prompt pack. Do not claim visual research was complete if any reference images could not be viewed. Reply with a concise status and paths only; keep prompt contents inside the file.
 
 ## Running One Stage Only
 
-If the user asks for one piece ("اديني برومبت لوجو", "عايز prompt للبوستر"), load that sibling skill directly, but still run the relevant part of the intake: inspect existing inputs and ask for any missing facts before returning a prompt. A direct request to build a page or create an asset overrides prompt-only default for that selected deliverable.
+When a user asks for one stage, activate that sibling skill directly. For mockup prompts, follow the same approved-brief, file-output, and visual-reference requirements in `../mockup-prompting/SKILL.md`. A direct request to create an image or HTML artifact applies only to that selected deliverable and does not authorize other stages.

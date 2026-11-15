@@ -1,58 +1,105 @@
 ---
 name: mockup-prompting
-description: Interviews the user about the intended touchpoints and existing assets, then writes detailed image-generator prompts for brand mockups. Activate whenever the user asks for product mockups or brand applications.
+description: Interviews about brand mockups, visually researches real global and Arabic references, then writes approved, detailed mockup prompts into prompts.md.
 argument-hint: "[brand-name] [mockup-type]"
 metadata:
   author: mostafa
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
-# Mockup Prompting
+# Mockup Prompting — Research Before Rendering Instructions
 
-Writes precise, ready-to-paste image-generation or compositing prompts that show an approved identity on relevant physical or digital touchpoints. Prompt-only handoff is the default; the user runs the prompts in their chosen image tool. Requires a locked brief from `../brand-identity` and the approved logo asset from `../logo-prompting` unless the user explicitly asks for an early concept mockup.
+Write precise image-generation or compositing prompts that place an approved brand identity on realistic, useful touchpoints. Prompts are file deliverables; do not paste ready-to-run prompt text into chat. The user runs them in an external image tool unless they explicitly request image generation and an image tool is available.
 
 ## When to Use
 
-- User wants to see the logo "in context" (on a bag, a sign, a t-shirt, packaging, a vehicle, etc.)
-- Building the mockup section of a `../brand-presentation` page
-- An earlier mockup came out wrong (wrong business category, wrong country, clashing photography style)
+- The user wants to see an approved logo or identity in context
+- The mockup section of a brand prompt pack or presentation is being prepared
+- Existing mockups need a focused prompt revision
 
-## Step 0 — Interview and audit
+## Step 0 — Audit and lock before writing
 
-Read `../shared-references/brand-intake-interview.md`. Inspect the approved brief, actual logo, product images, selected campaign, and existing mockups before asking. Confirm only missing details that change the scene or asset: which touchpoints, clean mockup versus marketing lifestyle image, market/geography, target image tool/aspect ratio, and required copy. Show the input lock and wait for confirmation before writing the prompts.
+Read `../shared-references/brand-intake-interview.md`, `references/mockup-types-by-business.md`, and `references/prompt-patterns.md`. Inspect `brand identity.txt` if present, approved logo files, product imagery, campaign assets, current mockups, and existing `prompts.md`.
 
-## Step 1 — Pick mockups that actually fit the business type
+- If `brand identity.txt` is missing, use `../brand-identity/SKILL.md` to interview and create it after user approval. Never write a mockup prompt from an incomplete brief.
+- If the identity file exists, use it as the source of truth; do not create or overwrite it. Ask about conflicts instead of guessing.
+- Confirm which customer touchpoints to cover, whether each should be a clean presentation mockup or a marketing/lifestyle scene, target generator and aspect ratio, required copy, and available assets.
+- Show a concise input lock and wait for approval before drafting prompts. Do not provide prompt text in chat.
 
-Never default to a generic mockup set. Use `references/mockup-types-by-business.md` to propose 3–6 relevant applications, ranked by customer visibility and business value. Ask which real touchpoints to prompt when the brief does not identify them. For research examples, consult `../shared-references/brand-design-reference-library.md` and, for Arabic-market work, `../shared-references/arabic-brand-design-reference-library.md`; adapt the system logic, not recognizable artwork.
+## Step 1 — Research the reference libraries (required)
 
-## Step 2 — Match the photography style to the logo's own style
+Before writing any mockup prompt, review and visually inspect at least:
 
-Choose the image treatment for the job. For guideline presentations, default to a clean studio object shot with readable material and a neutral exact-hex background. For campaign/lifestyle requests, use a narrative scene only when the user asks for it, the brief supports it, and geography/context are specified. A flat logo can appear on a realistic object; avoid effects that compete with or misrepresent the logo.
+- **Five distinct global projects** linked from `../shared-references/brand-design-reference-library.md`
+- **Five distinct Arabic-market projects** linked from `../shared-references/arabic-brand-design-reference-library.md`
 
-Only use narrative/lifestyle photography (a real setting, a real person) if the user explicitly asks for that style AND it's for marketing content, not for a brand-identity presentation page.
+Ten distinct projects are required for a complete mockup prompt set. Choose links relevant to the locked industry, touchpoints, and audience. For Arabic projects, prioritize the target country when the library allows it. Do not count the same project twice because it appears on multiple pages.
 
-## Step 3 — Attach the real logo file, don't re-describe it
+For every counted reference:
 
-Attach the actual approved logo image to every prompt when the tool supports references. Do not ask an image model to redraw precise lettering. If it cannot preserve the mark reliably, generate a blank/unbranded object and composite the logo file afterward.
+1. Open the direct source page, not only the library table, title, search snippet, or thumbnail.
+2. Inspect actual identity and mockup images. Record what is visibly shown: object/touchpoint, logo scale and placement, material, packaging hierarchy, color use, lighting, camera/crop, and context where visible.
+3. Separate visible facts from interpretation. Record one transferable method and one recognizable element to avoid copying.
+4. Link the source in the research notes inside `prompts.md` and state which prompt decision it informed.
 
-## Step 4 — Geography and context
+Activate and follow the `agent-reach` skill when reading or accessing reference links, in line with that skill's public-content routing and access limits. When text retrieval alone does not expose images, use an image-capable browser or visual inspection tool. Do not claim to have seen images from a text-only page summary.
 
-If a mockup includes a real-world setting (storefront, street, workplace, home, or person), use the country/region and economic context already locked in the brief. If absent, ask before generating. Avoid broad stereotypes; specify only the observable environmental details the user actually wants.
+If a page is inaccessible, replace it with another relevant link from the same library. If fewer than five visually inspected references in either group remain, do not claim completion and do not invent observations. Add this exact note to `prompts.md`:
 
-## Step 5 — Write and review the prompt
+> NOTE: Use the Agent Reach skill to access and visually inspect the reference URLs before finalizing these prompts.
 
-1. Read `references/prompt-patterns.md` and fill its fields with verified details: object, material, scale, print method, logo position, colors by exact hex, camera, light, crop, and realism level.
-2. State whether the image is a clean identity mockup, an actual UI/device mockup, or campaign photography.
-3. Keep the generated image free of invented copy, fake branding, labels, watermarks, and interface text. Place accurate copy and the approved logo with real assets in a later design/compositing step. State which files the user should attach and which elements should remain blank for reliable compositing.
-4. Check every prompt against the brief, selected touchpoint, reference source, and platform requirements. Ask before adding a new color, product variation, or scene.
+List the inaccessible links and the limitation, and leave prompts that depend on those observations provisional. Follow Agent Reach instructions for login, rate limits, platform blocks, and errors; never bypass them or repeatedly retry blocked pages.
+
+## Step 2 — Select useful mockups
+
+Use `references/mockup-types-by-business.md` to propose three to six high-value touchpoints, ranked by customer visibility and business value. Ask the user to select or correct the list if the brand brief does not already define the actual touchpoints. Do not default to a generic pile of bags, cups, shirts, and storefronts.
+
+For each selected touchpoint, connect the prompt to:
+
+- Its real role in the customer journey
+- The approved logo version and exact brand colors
+- Materials and production constraints from the brief
+- One or two general methods learned from the inspected references
+- A clear originality boundary so the new design remains distinct
+
+## Step 3 — Match image treatment to the use
+
+- For a guidelines board or identity presentation, default to a clean studio mockup with readable material and controlled, approved background color.
+- Use narrative/lifestyle imagery only when the user requests it, the locked brief supports it, and the geography/context are explicit.
+- Do not place a flat/minimal mark in a cinematic scene unless the user explicitly wants that contrast.
+- If a real setting, person, shop, or street appears, use the country/region in `brand identity.txt`; ask if it is missing.
+
+## Step 4 — Preserve the real assets
+
+Attach the approved logo and source assets to every prompt when supported. Never ask an image model to recreate exact lettering or an approved logo. If fidelity is unreliable, request a blank/unbranded object with clean placement space and composite the real assets afterward.
+
+## Step 5 — Write prompts to `prompts.md`
+
+Write or update `prompts.md` in the project root. If it already exists, preserve unrelated approved prompts and update only the mockup sections the user requested. Organize the file as:
+
+1. Approved brief/file lock and attach-this-file list
+2. Reference review table with five global and five Arabic sources, access/visual-inspection status, observations, transferable methods, and originality boundaries
+3. One ready-to-paste prompt per selected touchpoint
+4. Open items, failed/inaccessible links, and the exact Agent Reach note when needed
+
+Every prompt must specify one deliverable and, as relevant:
+
+- Exact object, customer use, material, scale, and production method
+- Exact approved logo file, logo variant, and position
+- Exact approved hex colors and roles, including background/surface colors
+- Composition, hierarchy, camera angle, lens/scale cues, lighting, crop, and aspect ratio
+- Country/region and confirmed scene details for real-world settings
+- Copy to include exactly, or blank space for later typesetting
+- Negative constraints (no fake logo/text, invented claims, watermark, or unapproved design element)
+- Image quality and brand-fidelity checks
+- Which references informed the method without imitating their art direction
+
+Do not add a new color, product variant, scene, label, or marketing claim without approval. A generated mockup is not evidence that packaging is manufacturable or that legal/regulatory text is correct.
 
 ## Rules
 
-- Never put a flat/minimal logo into a hyper-realistic cinematic scene unless the user explicitly wants that specific contrast.
-- Never generate a mockup type that doesn't match the business (no staff-uniform mockups for a brand with no staff-facing retail presence, no clothing-brand studio shoots for a corner shop).
-- Always isolate product mockups against a plain/neutral background unless lifestyle/marketing photography was explicitly requested — isolation is what makes a mockup usable in a guidelines doc or presentation page.
-- All image prompts must use exact approved hex codes for brand colors and background. Do not use vague substitute color names; ask if a required value has not been locked.
-- Treat a generated image as a presentation mockup, not proof that a package is manufacturable or that required regulatory copy is correct.
-- Make every prompt paste-ready: specify one deliverable, subject/object, materials, scale, logo placement, exact hex colors and roles, background, lighting, camera/crop, aspect ratio, realism level, exclusions, and a short quality checklist. Avoid contradictory adjective piles.
-- Do not generate image files unless the user explicitly asks and an image-generation capability is available. A prompt request means return the prompt for the user's external tool.
-- For story-led image requests, read `../brand-identity/references/story-to-visual-prompt.md` and use only approved story facts. Do not use national/cultural shorthand as a substitute for a confirmed story.
+- Use exact approved hex codes; if a needed color is not locked, stop and ask.
+- Never use national or cultural shorthand as a substitute for confirmed audience and setting details.
+- Avoid touchpoints unrelated to the business's real service and customer journey.
+- Do not generate image files unless the user explicitly requests them and an image-generation capability is available.
+- Keep prompt contents in `prompts.md`; in chat, provide only questions, the brief approval summary, or a concise file-completion note.

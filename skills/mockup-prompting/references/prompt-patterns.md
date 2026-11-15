@@ -1,6 +1,6 @@
 # Mockup Prompt Patterns
 
-Read the locked brief and `mockup-types-by-business.md` first. Use the [Brand Design Reference Library](../../shared-references/brand-design-reference-library.md) and, for Arabic-market work, the [Arabic Brand Design Reference Library](../../shared-references/arabic-brand-design-reference-library.md) to study how real systems are carried across touchpoints; don't copy the reference's product, composition, logo, or distinctive treatment.
+Read `brand identity.txt`, when present, and `mockup-types-by-business.md` first. In the full branding workflow, use the [Brand Design Reference Library](../../shared-references/brand-design-reference-library.md) and the [Arabic Brand Design Reference Library](../../shared-references/arabic-brand-design-reference-library.md) to visually inspect at least five global and five Arabic-market projects before drafting. Open direct case pages and inspect their actual identity/mockup imagery; titles, snippets, and text summaries do not count. Follow the `agent-reach` skill's access rules, and use a visual-capable browser/tool if text retrieval does not expose imagery. Do not copy any reference's product, composition, logo, palette, typeface, or distinctive treatment.
 
 ## Prompt inputs to collect
 
@@ -14,6 +14,7 @@ For each approved mockup, establish:
 - Where the logo sits, approximate physical size, any approved clear-space rule, orientation, and whether it is printed, embossed, embroidered, etched, or shown on-screen
 - Camera angle, lens feel, crop, lighting, surface shadows, and image aspect ratio
 - Whether this is a clean brand-guidelines presentation or an explicitly requested campaign/lifestyle scene
+- One or two general methods from visually inspected references that fit the approved brand, plus the original element that must not be copied
 - Any exact visible copy; for image generation, default to no words and add verified text afterward
 
 Ask for missing facts that materially change the prompt. Do not guess the country, economic tier, product substrate, audience, or required mockup type.

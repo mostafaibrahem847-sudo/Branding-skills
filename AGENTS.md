@@ -28,19 +28,21 @@ The default deliverable is a detailed prompt pack for the user's chosen image ge
 ## How to behave when a branding request comes in
 
 1. **Identify which stage is being asked for.** "Let's brand X" / "ابدأ مشروع براندينج" → load `skills/lets-brand/SKILL.md` and follow its staged workflow. A request for just one piece ("اديني برومبت لوجو", "اعمل الصفحة بتاعة البراند") → go straight to that skill's own `SKILL.md`.
-2. **Interview and audit before output.** Read `skills/shared-references/brand-intake-interview.md`; inspect any supplied brief, logo, guidelines, copy, and project files first. Reuse facts already provided, ask only missing or conflicting details, and confirm a concise brand summary before producing prompts. Never write a logo, mockup, poster, story, guideline, or presentation prompt without a locked brief for its required inputs.
+2. **Interview and audit before output.** Read `skills/shared-references/brand-intake-interview.md`; inspect any supplied `brand identity.txt`, logo, guidelines, copy, and project files first. Reuse facts already provided, ask only missing or conflicting details, and confirm a concise brand summary before producing prompts. When the user says “Let's brand,” do not paste prompts or long design details in chat: ask questions, confirm the brief, then put the prompt set in `prompts.md`. Never write a logo, mockup, poster, story, guideline, or presentation prompt without a locked brief for its required inputs.
 3. **Follow the project folder convention** so every skill can find what the others produced:
    ```
    /project-name/
-     AGENTS.md (or brief.md)     ← the locked brand brief
+     AGENTS.md                   ← project-specific instructions, if supplied
+     brand identity.txt          ← approved identity; create only if absent
+     prompts.md                  ← all requested, ready-to-paste prompts
      /assets/
        /logo/                    ← approved logo
        /mockups/                 ← approved mockups
      /output/
-        /prompts/                ← approved, requested prompt packs
        brand-presentation.html
        banners/
    ```
+   If `brand identity.txt` already exists, read and preserve it; do not create a duplicate or overwrite it. If `prompts.md` exists, preserve unrelated approved prompt content and update only requested sections.
 4. **Confirm before moving to the next stage.** Don't silently chain identity → logo → mockups → presentation without showing the user each stage's result — this is explicitly how `lets-brand` is designed to work.
 5. **Respect every "Hard Rules" / "Non-negotiables" section** in each skill's `SKILL.md` — these exist because of real, observed failure cases (see especially `logo-prompting/references/common-pitfalls.md`), not generic caution.
 
@@ -56,6 +58,9 @@ The default deliverable is a detailed prompt pack for the user's chosen image ge
 - Exact brand colors in AI image prompts come from the locked brief. Keep unapproved colors and text as open decisions.
 - Check current official platform or printer specifications before exporting banners or print files; the reference tables are starting points only.
 - When research is requested, use `skills/shared-references/visual-analysis-workflow.md` to log direct sources, distinguish observation from interpretation, and count distinct projects.
+- For mockup prompts and full prompt packs that include mockups, inspect at least five distinct global references and five distinct Arabic-market references from the two libraries. Open each source URL and visually inspect the actual case-study images; a title, text summary, or thumbnail alone does not count. Follow the `agent-reach` skill when accessing reference URLs and obey its read-only, login, rate-limit, and platform-block rules.
+- Add the exact note `NOTE: Use the Agent Reach skill to access and visually inspect the reference URLs before finalizing these prompts.` to `prompts.md` when visual access is unavailable; identify inaccessible links and do not claim the scan is complete.
+- For the full `Let's brand` workflow, create `brand identity.txt` only if absent, include the locked palette as exact hex values with roles, and write all requested prompt modules to `prompts.md`. Do not paste those prompts into chat; give a concise file-status note after creation.
 
 See `README.md` for install locations per agent and more usage examples.
 
