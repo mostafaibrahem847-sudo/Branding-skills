@@ -55,41 +55,18 @@ New-Item -ItemType Directory -Force .claude/skills | Out-Null
 Copy-Item skills/* .claude/skills/ -Recurse -Force
 ```
 
-### Install from npm
+### Install as agent skills from npm
 
-After `branding-skills` is published, install it from your project root:
-
-```bash
-npm install --save-dev branding-skills
-```
-
-The package contains the Markdown skills under `node_modules/branding-skills/skills/`. For Codex or another Markdown-capable agent, ask it to read `node_modules/branding-skills/skills/lets-brand/SKILL.md` and follow the workflow. For Claude Code project-level discovery, copy the installed skills into `.claude/skills/`.
-
-PowerShell:
-
-```powershell
-New-Item -ItemType Directory -Force .claude/skills | Out-Null
-Copy-Item node_modules/branding-skills/skills/* .claude/skills/ -Recurse -Force
-```
-
-macOS/Linux:
+After `branding-skills` is published, run these commands from your project root:
 
 ```bash
-mkdir -p .claude/skills
-cp -R node_modules/branding-skills/skills/* .claude/skills/
+npm install --save-dev skills branding-skills
+npx skills experimental_sync -y
 ```
 
-### Publish to npm (maintainers)
+`npm install` downloads the package and the `skills` CLI. `experimental_sync` then discovers and links the skills into the agent directories. This npm-package sync workflow is currently experimental; see the [Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md).
 
-From the package root, after completing the package metadata and selecting a license that covers the collection:
-
-```bash
-npm login --auth-type=web
-npm whoami
-npm publish
-```
-
-`branding-skills` is an unscoped package name, so npm publishes it publicly. See [npm's publishing guide](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages/).
+The package's `skills/` directory is part of `branding-skills`; it is not a separate npm package, so don't append `/skills` to the `npm install` command. If you only want to inspect the files, they are available at `node_modules/branding-skills/skills/` after installation.
 
 ## Start a branding session
 
@@ -146,3 +123,15 @@ project-name/
 ## Package notes
 
 This collection is made of Markdown instructions and references. It has no runtime dependencies or build step. The package metadata and GitHub links are set in the root `package.json`. The skills include adapted material as credited in their files, so choose and declare a license that covers the complete package before publishing it to npm.
+
+## Maintainer release
+
+This section is for the package maintainer; users installing the skills can skip it. From the package root, after completing package metadata and selecting a license that covers the collection, publish the unscoped package with:
+
+```bash
+npm login --auth-type=web
+npm whoami
+npm publish
+```
+
+Unscoped npm packages are public by default. See [npm's publishing guide](https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages/).
