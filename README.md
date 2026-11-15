@@ -9,6 +9,7 @@ Create a clear brand brief, then turn it into detailed, production-ready prompts
 [![Agent Ready](https://img.shields.io/badge/AI_Agent-Ready-6C5CE7?style=for-the-badge)](#supported-agents)
 [![Markdown](https://img.shields.io/badge/Format-Markdown-2563EB?style=for-the-badge&logo=markdown&logoColor=white)](#the-seven-skills)
 [![Arabic Research](https://img.shields.io/badge/Research-Arabic_Market-00856A?style=for-the-badge)](#reference-libraries)
+[![npm version](https://img.shields.io/npm/v/branding-skills?style=for-the-badge)](https://www.npmjs.com/package/branding-skills)
 
 </div>
 
@@ -52,14 +53,14 @@ Copy-Item skills/* .claude/skills/ -Recurse -Force
 
 ### Install from npm
 
-After the npm package is published, install the package and the Skills CLI from your project root:
+Run these commands from the root of the project where you want to use the skills—not from the `branding-skills` source repository:
 
 ```bash
-npm install --save-dev skills branding-skills
-npx skills experimental_sync -y
+npm i branding-skills
+npx skills add https://github.com/mostafaibrahem847-sudo/Branding-skills
 ```
 
-The first command downloads the package. The second registers its skills with detected agents. The npm-package sync workflow is currently experimental; see the [Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md).
+The first command installs `branding-skills`. The second runs the Skills CLI and registers the package's skills with detected agents. The npm-package sync workflow is currently experimental; see the [Skills CLI reference](https://github.com/vercel-labs/skills/blob/main/docs/commands.md).
 
 `skills/` is a folder inside the `branding-skills` package, not a separate npm package. Install `branding-skills`, then let the Skills CLI discover and link its skills.
 
@@ -137,11 +138,11 @@ project-name/
 - **Build step:** none
 - **Repository:** [mostafaibrahem847-sudo/Branding-skills](https://github.com/mostafaibrahem847-sudo/Branding-skills)
 
-The skills include adapted material credited in their files. Select and declare a license that covers the complete collection before publishing the npm package.
+The published `1.0.0` package currently has no license declared in `package.json`. Add the selected SPDX license before a future release. The skills include adapted material credited in their files, so make sure the chosen license covers the complete collection.
 
 ## Maintainer release
 
-This section is for maintainers publishing the npm package. End users installing the skills can skip it. After completing the metadata and selecting a license that covers the collection, publish from the package root:
+This section is for maintainers publishing future npm versions. End users installing the skills can skip it. Increment the package version and complete the metadata before publishing from the package root:
 
 ```bash
 npm login --auth-type=web
