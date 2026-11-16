@@ -22,7 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/mostafaibrahem847-sudo/Branding-skills.git"
   },
-  "license": "",
+  "license": "MIT",
   "author": "mustafa2004",
   "files": [
     "skills"
