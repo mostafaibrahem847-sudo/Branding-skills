@@ -1,30 +1,32 @@
 ---
 name: brand-identity
-description: Interviews the user, audits identity assets, and locks a coherent brand strategy and design system. Creates brand identity.txt only when it is missing.
+description: Translates an approved brand strategy into a coherent visual and verbal identity system, including exact palette roles, typography, logo constraints, graphics, imagery, and applications. Works independently or after brand-strategy.
 argument-hint: "[brand-name] [industry]"
 metadata:
   author: mostafa
   version: "1.1.0"
 ---
 
-# Brand Identity — The Source of Truth
+# Brand Identity — Translate Strategy into a Design System
 
-This skill establishes the approved facts and visual direction used by every later prompt. Before drafting any output, read `references/reference.md`, `../shared-references/research-reference-standard.md`, `../shared-references/brand-intake-interview.md`, `references/identity-questionnaire.md`, `references/personality-archetypes.md`, `references/brief-authoring-prompt.md`, and `references/identity-system-framework.md`.
+This skill translates the approved strategic foundation into a usable design system and an identity source file. It can be invoked independently; in a full new-brand workflow, `brand-strategy` establishes the positioning first. Read `references/reference.md`, `../shared-references/research-reference-standard.md`, `../shared-references/brand-intake-interview.md`, `references/identity-questionnaire.md`, `references/personality-archetypes.md`, `references/brief-authoring-prompt.md`, and `references/identity-system-framework.md` before drafting.
 
 ## When to Use
 
 - At the start of a new branding project
 - When a brand identity file is missing and the user starts a full branding workflow
 - When an existing logo or brief must be reconciled before writing downstream prompts
+- When an approved brand strategy needs a visual/verbal identity translation
 
 ## Workflow
 
 ### 1. Audit before interviewing
 
-Inspect the project root and relevant asset folders. Look specifically for `brand identity.txt`, `prompts.md`, logo variants, current guidelines, palette/type specifications, approved copy, product imagery, mockups, and previous approvals.
+Inspect the project root and relevant asset folders. Look specifically for `brand strategy.md`, `brand identity.txt`, `prompts.md`, logo variants, current guidelines, palette/type specifications, approved copy, product imagery, mockups, and previous approvals.
 
 - If `brand identity.txt` exists, read it and reuse it as the current source of truth. Do **not** create a duplicate, rename it, or overwrite it.
-- If it conflicts with newer user instructions or approved assets, show the conflict and ask whether to update the existing file.
+- If `brand strategy.md` exists, use its approved positioning, audience, promise, proof, and trade-offs as strategic constraints. Do not silently re-position the brand inside this identity skill.
+- If either file conflicts with newer user instructions or approved assets, show the conflict and ask which approved source should govern.
 - If it does not exist, continue the interview and create it only after the user approves the brief summary.
 - Do not infer that a file is approved just because it exists; verify its status from its contents or ask.
 
@@ -45,6 +47,8 @@ Use `../shared-references/brand-intake-interview.md` and `references/identity-qu
 - Image direction, touchpoints, channels, production constraints, and selected deliverables
 
 Do not ask the user to repeat known facts. Do not return prompts during this interview.
+
+If `brand strategy.md` is approved, treat its core strategic choices as settled and ask only for missing identity decisions. If strategy is absent and this is a full new-brand workflow, route to `../brand-strategy/SKILL.md`; if the user explicitly wants identity alone, gather only the minimum strategic context needed and label unresolved positioning as provisional rather than forcing the full strategy skill.
 
 ### 3. Lock the color palette explicitly
 

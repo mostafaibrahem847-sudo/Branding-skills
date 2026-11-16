@@ -1,6 +1,6 @@
 # Research Reference Standard — Required by Every Skill
 
-This is the shared operating method for all 12 `branding-skills` skills. Before producing a direction, prompt, written guide, presentation plan, or visual artifact, read this file **and** the active skill's `references/reference.md`. Then read any skill files those references point to. Do not use research as decoration after a direction is already chosen: use it to decide what the prompt should actually ask for.
+This is the shared operating method for all 15 `branding-skills` skills. Before acting, read this file, the active skill's `references/reference.md`, and `subagent-collaboration-protocol.md`; then read any specialist files those references point to. Do not use research as decoration after a direction is already chosen: use it to make the active skill's decisions more specific and evidence-based.
 
 ## 1. Audit first; ask only questions that change the result
 
@@ -30,6 +30,8 @@ For each design-facing skill, inspect at least **five distinct, relevant real-wo
 
 For any prompt pack that contains mockups, the additional requirement remains **five global + five Arabic-market projects**. The five-logo/image minimum is separate unless the same exact project image genuinely informs both decisions; record that reuse and do not double-count it within a five-plus-five market count.
 
+For `brand-strategy`, inspect at least five relevant public brand cases and the actual customer-facing material that supports each strategic observation; combine those cases with credible category/customer evidence. For `brand-audit`, inspect five relevant external benchmarks when they materially support the audit judgment, and clearly separate them from the user's own evidence. `brand-compass` should prefer the user's approved strategy for a scoped decision and research externally only when a current fact or requested benchmark could change the recommendation.
+
 ## 4. Record evidence in a repeatable visual-analysis card
 
 Create one compact card per distinct project in `prompts.md` or the selected research log:
@@ -56,12 +58,15 @@ Analyze each selected image **at full useful resolution**. Note exact colors onl
 4. Build prompts from specific decisions: exact assets and filenames; their role; approved text/scripts; exact HEX values and roles; composition and hierarchy; material/environment; ratio/placement; exclusions; and measurable quality checks. Use a blank/manual-typesetting fallback for unreliable text. Keep unknowns open; don't hide them inside vague adjectives.
 5. Write only the requested output modules. Preserve existing approved project files and history. Do not generate images, HTML, or an actual guideline document unless explicitly requested.
 
-## 6. Decision routing across the 12 skills
+## 6. Decision routing across the 15 skills
 
 | User need / current state | Route and required handoff |
 |---|---|
-| Full new brand, refresh, or complete prompt pack | `lets-brand` orchestrates the intake, approved identity, selected skills, research, staged approvals, and `prompts.md`; it does not replace specialist work |
-| No approved identity brief or brand facts are conflicting | `brand-identity`; lock factual offer/audience/market/story and palette before dependent prompts |
+| Full new brand, repositioning, or complete prompt pack | `lets-brand` orchestrates the intake, approved strategy, identity, selected skills, staged approvals, and requested files; every selected specialist can also be invoked alone |
+| New brand or positioning/architecture decision | `brand-strategy`; establish audience, category, value, promise, proof, strategic pillars, trade-offs, and architecture when needed; then hand off approved choices to `brand-identity` |
+| Translate approved strategy into visual/verbal system | `brand-identity`; create/update `brand identity.txt` only when absent or specifically approved; preserve strategic choices |
+| Diagnose an existing brand across agreed touchpoints | `brand-audit`; provide evidence, scope limitations, prioritized findings, and specialist handoffs; do not silently remediate |
+| Decide whether one idea or action fits an approved brand | `brand-compass`; give a concise do/don't recommendation traced to approved strategy; use `brand-strategy` if the baseline is missing |
 | New logo, no existing mark | `logo-guidelines` pre-design research → user approves direction → `logo-design` asks pivotal logo questions → concept prompt; branch to `logo-text` only if name-only is approved |
 | Existing approved logo needs usage rules | `logo-guidelines` post-design mode using authoritative asset and owner-approved/measured rules |
 | A logo generation came out wrong or one edit is needed | `logo-prompting` revision only; preserve all approved logo facts and state the entire existing mark plus one requested change |

@@ -6,7 +6,7 @@ Use this before producing any branding output, including one-off image prompts. 
 
 ### 1. Audit what is already available
 
-Inspect the project folder and user-provided links/files before asking. Look specifically for `brand identity.txt`, `prompts.md`, a locked `AGENTS.md` or `brief.md`, approved logo files and variants, current brand guidelines, palette/type specifications, product or service imagery, existing campaign copy, and earlier approved prompts. If `brand identity.txt` exists, read and preserve it; never make a duplicate or overwrite it. If it is absent, create it only after the user approves the compact brief summary. Do not infer approval from a file merely existing; check its status or ask.
+Inspect the project folder and user-provided links/files before asking. Look specifically for `brand strategy.md`, `brand identity.txt`, `prompts.md`, a locked `AGENTS.md` or `brief.md`, approved logo files and variants, current brand guidelines, palette/type specifications, product or service imagery, existing campaign copy, and earlier approved prompts. Preserve both strategy and identity files; never make duplicates or overwrite them. Do not infer approval from a file merely existing; check its status or ask.
 
 Create a quiet working table with three states:
 
@@ -25,6 +25,7 @@ Ask only for missing, decision-critical information. Group questions so the user
 #### Brand and business
 
 - Exact brand name and approved spelling in every script; attach the current logo if available.
+- What business/brand outcome must this work support, and which decisions should the strategy guide?
 - What the brand sells or does, where it operates, and what is actually different about the offer.
 - Is this a new concept, a live brand, or a refresh? Which existing elements must remain?
 
@@ -42,7 +43,7 @@ Ask only for missing, decision-critical information. Group questions so the user
 
 #### Deliverables and use
 
-- Which prompt outputs are wanted now: logo concept/refinement, text-only wordmark, logo color variants, logo-derived pattern, pre-design Logo Direction Guidelines, post-design visual logo-guideline board, mockups, product or campaign posters, social/ad banners, story-led imagery, standalone HTML presentation build prompt, or written guideline document prompt?
+- Which stage/output is wanted now: brand strategy/repositioning, identity translation, a Brand Compass decision, a broad Brand Audit, logo concept/refinement, text-only wordmark, logo color variants, logo-derived pattern, logo guidelines, mockups, campaign/poster, banner, story-led imagery, standalone HTML presentation prompt, or written guideline?
 - For each image: the target generator if known, aspect ratio or platform, number of variants, and whether it is a clean presentation mockup or marketing scene.
 - For each code-agent prompt: should the recipient create the HTML file, or should it only review the files and return an implementation plan?
 - Exact approved headline/CTA/legal copy, or permission to draft copy as unapproved options.
@@ -62,6 +63,7 @@ When several decisions are open, offer 2–3 short, clearly different options wi
 Before making project files, show the user a concise confirmation block. This is a brief summary, not prompt output:
 
 ```text
+Business objective / strategic question:
 Brand / exact scripts:
 Offer / category:
 Market / audience / language:
@@ -89,7 +91,7 @@ Keep open items visible. Ask the user to correct the summary or approve it befor
 
 ## After the interview
 
-Use the approved summary as the single source of truth for every selected prompt. For a full branding workflow, create `brand identity.txt` in the project root only if absent; if it already exists, use it and do not recreate or overwrite it. Write all requested prompt modules to `prompts.md`, preserving unrelated approved content if that file already exists. If later answers change the brief, update the identity lock only after approval and regenerate only affected prompt sections.
+Use the approved summary as the source of truth for every selected skill. For a full new-brand or repositioning workflow, run `brand-strategy` first and create `brand strategy.md` only if absent. Then hand the approved strategy to `brand-identity`, creating `brand identity.txt` only if absent. Save requested prompt modules to `prompts.md`, preserving unrelated approved content. A single-skill request does not automatically invoke `lets-brand` or create both files. If later answers change the brief, update only the approved source files and prompt sections affected.
 
 Before mockup prompts, complete the required visual scan: at least five distinct global source pages and five distinct Arabic-market source pages, opened and visually inspected. Follow `../visual-analysis-workflow.md` and the `agent-reach` skill's access rules. If a source image cannot be inspected, it does not count; add the required Agent Reach note to `prompts.md` and leave affected prompts provisional.
 

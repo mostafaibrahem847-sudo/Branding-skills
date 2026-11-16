@@ -1,12 +1,12 @@
 # Reference Instructions — `brand-identity`
 
-Read this file and `../../shared-references/research-reference-standard.md` before interviewing, proposing a position, choosing palette directions, or writing `brand identity.txt`. Then read the existing identity questionnaire, identity-system framework, and brief-authoring prompt named in `SKILL.md`.
+Read this file, `../../shared-references/research-reference-standard.md`, and `../../shared-references/subagent-collaboration-protocol.md` before identity work. Then read the existing identity questionnaire, identity-system framework, and brief-authoring prompt named in `SKILL.md`. This skill translates strategy into identity; a direct identity-only request can run without `lets-brand`.
 
 **Approval gate:** First audit the supplied brief/assets read-only. Ask at most 3–6 missing strategic questions; wait for the user's confirmation of the facts, identity scope, and research direction before searching project-specific references or writing/updating `brand identity.txt`. Reuse confirmed answers and don't spend questions on easy execution details.
 
 ## Interview for strategic pivots
 
-Audit existing assets/files first. Ask only decisions that change the brief: actual offer and proof; customer and buying context; market/country/language; differentiation; true founder/product story; approved or prohibited claims; desired tier; identity refresh constraints; approved palette status; required touchpoints. Keep ordinary execution details (e.g. number of sections in a brief) out of the interview. Don't ask the user to choose design jargon; offer simple, distinct options when a strategic question is hard to answer.
+Audit `brand strategy.md`, `brand identity.txt`, supplied assets, and approvals first. If an approved strategy exists, reuse its offer, audience, differentiation, promise, proof, and trade-offs. Ask only missing identity decisions: desired tier/customer impression, refresh constraints, approved palette status, typography/script needs, logo status, supporting graphics/imagery, and required touchpoints. If the user asks for identity alone without a strategy file, ask only the minimum strategic facts needed to avoid arbitrary design; route deeper positioning or architecture work to `../../brand-strategy/SKILL.md`. Keep execution details out of the interview and translate design jargon into simple options.
 
 Before writing, confirm: **who the brand serves, what it provides, why it is meaningfully different, where it competes, what is fact vs aspiration, and which visual decisions are approved versus open.** If the user rejects a proposed route, record why and exclude it from future prompts.
 
@@ -18,7 +18,9 @@ When the source gives accessible exact colors, record them as source metadata—
 
 ## Decision routes
 
-- **No identity file** → conduct the minimal strategic interview, lock the brief, and create the file only after user approval.
+- **No identity file, approved strategy exists** → use the strategy as source of truth, interview for missing design-system choices, then create `brand identity.txt` only after user approval.
+- **Full new brand but no approved strategy** → route to `../../brand-strategy/SKILL.md` before finalizing the identity.
+- **Identity-only request, no strategy file** → proceed independently with minimum context; mark strategic uncertainties provisional rather than forcing a full strategy project.
 - **Existing approved identity file** → preserve it; ask only about contradictory or newly requested changes.
 - **Brand facts or claims unresolved** → ask before using them in logo/story/campaign prompts.
 - **Palette missing** → present 2–3 palette directions as proposals with role logic; do not call them approved until selected. Route final color roles back into the identity file.

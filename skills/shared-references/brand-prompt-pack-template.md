@@ -1,10 +1,11 @@
 # Brand Prompt Pack Template
 
-Use after the user completes `brand-intake-interview.md` and approves the compact brand lock. For a full brand workflow, create or reuse `brand identity.txt` in the project root and save the complete prompt pack in `prompts.md`. Keep prompt contents in the file; in chat, ask interview questions, show the brief approval summary, and give a concise final file-status note only. This template does not assume the current agent can generate images.
+Use after the user completes `brand-intake-interview.md` and approves the compact brand lock. For a full new-brand or repositioning workflow, create or reuse `brand strategy.md` first, translate its approved choices into `brand identity.txt`, and save the selected prompt pack in `prompts.md`. Preserve existing approved files. Keep prompt contents in the file; in chat, ask interview questions, show the brief approval summary, and give a concise final file-status note only. This template does not assume the current agent can generate images.
 
 ## Pack cover / input lock
 
 ```text
+STRATEGY FILE: [project-root/brand strategy.md; created only for full new brand/repositioning or when requested]
 IDENTITY FILE: [project-root/brand identity.txt; created only if absent]
 PROMPT FILE: [project-root/prompts.md]
 Brand:
@@ -12,6 +13,7 @@ Approved name and exact spelling by script:
 Offer and category:
 Market, priority audience, language/dialect:
 Approved story, promise, proof, supplied copy:
+Approved strategic position, pillars, trade-offs, architecture:
 Locked palette: #HEX — role; #HEX — role; ...
 Locked typography / script behavior:
 Approved logo files and variants:
