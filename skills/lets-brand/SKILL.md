@@ -53,11 +53,16 @@ When the full workflow is requested and no `brand identity.txt` exists, create i
 - Story, promise, proof, differentiators, and claims that must not be made
 - Personality and voice
 - Color palette with exact hex values, named roles, and approval status
-- Typography and script behavior
-- Logo files, variants, clear-space or fidelity constraints when known
-- Image direction, approved touchpoints, channel needs, and production limits
+- Typography hierarchy and bilingual/script behavior
+- Logo system: exact files, variants, hierarchy, clear-space/background or fidelity constraints when known
+- Graphic/layout system: approved devices, shapes, pattern/icon/illustration behavior, grid, spacing, and what stays consistent across applications
+- Image system: subject/styling, composition, lighting, texture, editing, and boundaries grounded in the brief
+- Voice system: voice behavior, approved terminology/copy, language/script, and phrases/claims to avoid
+- Application rules for approved touchpoints; for product brands, confirmed products/variants, shared packaging anchors, approved variant-coding rule, formats, supplied artwork, and open material/production decisions
 - Must-keep, must-avoid, and unresolved decisions
 - Reference credits or source links that materially informed the brief
+
+Read `../brand-identity/references/identity-system-framework.md` when shaping the brief and applying product/beauty-specific questions. Treat “premium” as the user's intended price/experience tier translated into approved visual behavior; never fill gaps with a default luxury style. Do not invent products, packaging copy, ingredients, benefits, safety, testing, or regulatory details.
 
 If approved colors are missing, ask the user to provide or approve them. Do not treat proposals as locked. Every image prompt must use the approved hex values from this file.
 
@@ -86,7 +91,7 @@ Include:
 1. A short input lock referencing `brand identity.txt` and listing the exact files the user must attach.
 2. A reference review table with the minimum 5 global + 5 Arabic links, visual observations, transferable lessons, and originality boundaries. Include the exact Agent Reach note when the access/visual-inspection threshold is not met.
 3. One detailed, ready-to-paste prompt per requested deliverable: logo/refinement, mockups, posters/banners, story-led visuals, visual or written guidelines, and HTML presentation as selected.
-4. Exact approved hex colors, exact approved copy/spelling, composition, assets, output size/ratio, exclusions, quality checks, and unresolved inputs for every relevant prompt.
+4. Exact approved hex colors, exact approved copy/spelling, composition, output size/ratio, exclusions, quality checks, unresolved inputs, and the exact filenames/role of every supplied asset to attach for each relevant prompt. For mockups, explicitly instruct the image tool to use the uploaded approved logo as its logo reference and the supplied palette/design-system board as its visual-system reference; include exact HEX values in text as well.
 
 Include only the requested or brief-relevant modules. Do not copy recognizable logos, palettes, typefaces, layouts, illustrations, or signature devices from references. Never invent missing details.
 

@@ -11,7 +11,7 @@ Each skill folder under `skills/` is a self-contained instruction set: a `SKILL.
 | Folder | Role |
 |---|---|
 | `lets-brand/` | Orchestrator — read this first when starting a new brand project or when asked to run the full pipeline |
-| `brand-identity/` | Step 1 — the brand brief (name, personality, audience, colors, typography direction) |
+| `brand-identity/` | Step 1 — the approved strategy and connected identity system (logo, palette, type, graphics, imagery, voice, and application rules) |
 | `logo-prompting/` | Step 2 — AI logo-generation prompts, plus hard-won rules on what fails and why |
 | `mockup-prompting/` | Step 3 — AI product/application mockup prompts, matched to business type and logo style |
 | `brand-presentation/` | Step 4 — assembling everything into one single-page, Behance-style HTML file |
@@ -56,6 +56,8 @@ The default deliverable is a detailed prompt pack for the user's chosen image ge
 - For every prompt pack, specify exact supplied files to attach, exact approved Arabic/Latin spelling, composition and hierarchy, image ratio/placement, exclusions, and a quality check. If text rendering is unreliable, leave clean space for manual typesetting.
 - Do not execute a prompt, generate an image, write HTML, or save a prompt pack unless the user asks for that artifact or file. Prompt requests default to copy-ready text.
 - Exact brand colors in AI image prompts come from the locked brief. Keep unapproved colors and text as open decisions.
+- Treat a complete identity as one coherent system, not a loose list of attractive choices. Connect logo, palette, type hierarchy, graphic language, imagery, voice, and applications to the same approved positioning. For “premium,” clarify the intended tier and value cues; do not default to black, gold, or luxury clichés. Use `skills/brand-identity/references/identity-system-framework.md`, including its cosmetics module when applicable.
+- Every mockup prompt must name the exact approved logo image and instruct the image tool to use the uploaded file as the visible logo reference. Name the attached palette/design-system board as its visual reference when supplied, and repeat exact HEX values and roles in text. Name the role of each product/package reference. If the logo or a required design decision is missing, ask or keep the prompt provisional; never silently output a generic/unbranded mockup as final.
 - Check current official platform or printer specifications before exporting banners or print files; the reference tables are starting points only.
 - When research is requested, use `skills/shared-references/visual-analysis-workflow.md` to log direct sources, distinguish observation from interpretation, and count distinct projects.
 - For mockup prompts and full prompt packs that include mockups, inspect at least five distinct global references and five distinct Arabic-market references from the two libraries. Open each source URL and visually inspect the actual case-study images; a title, text summary, or thumbnail alone does not count. Follow the `agent-reach` skill when accessing reference URLs and obey its read-only, login, rate-limit, and platform-block rules.

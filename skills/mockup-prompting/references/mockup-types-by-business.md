@@ -42,10 +42,14 @@ Pick from the relevant row — don't generate a generic universal set for every 
 - Office signage (if the business has a physical office)
 
 ## Beauty / cosmetics / wellness
-- Product bottle/jar/tube packaging
-- Shopping bag
-- Box packaging with label
-- Storefront or counter display (if retail)
+- Hero product's primary package (bottle, jar, tube, compact, or applicator, only as confirmed)
+- Matching secondary carton or approved product set, showing the shared label grid and hierarchy
+- One coherent approved SKU family with only the user's confirmed variants and the locked variant-coding rule
+- Product listing/e-commerce hero or retail shelf/counter display only when that channel is in scope
+- Shipping or gifting packaging only if the business offers it
+- The actual uploaded logo and palette/design-system reference must be assigned to the image model as reference inputs when available; do not produce a generic unbranded “beauty” package as the final mockup
+
+Ask what “premium” means for this audience and product tier. Translate the answer into approved typography, hierarchy, imagery, and feasible material/finish cues; do not default to black, gold, glass, marble, metallic foil, or generic spa props. Keep package structure, ingredients, product benefits, size, variants, and label copy to supplied/approved facts. A visual mockup does not confirm manufacturability or regulatory compliance.
 
 ## Hospitality / hotel / travel
 - Key card, welcome letter, amenity kit, room-service menu

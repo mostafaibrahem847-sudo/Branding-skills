@@ -26,7 +26,9 @@ Branding Skills is a collection of seven reusable skills for Codex, Claude Code,
 - 🧭 **Start with the brief:** review the logo, files, existing guidelines, approved copy, and project context before asking questions.
 - 💬 **Ask useful questions:** resolve only the missing details that could change the work.
 - 🔒 **Lock the direction:** confirm one concise brand brief before writing production prompts.
+- 🧩 **Build one coherent identity system:** connect positioning, logo, exact palette roles, typography, graphic language, imagery, voice, and real applications; define premium behavior from the brand's audience and tier instead of relying on generic luxury clichés.
 - ✍️ **Get detailed prompts:** specify assets, composition, exact colors, typography direction, format, exclusions, and quality checks.
+- 🖼️ **Bind mockups to real assets:** name the exact logo, palette/system board, and product files to upload, and tell image tools how to use each reference.
 - 🤝 **Keep the user in control:** review each stage before continuing to another deliverable.
 - 🌍 **Use relevant references:** draw on global and Arabic-market case studies without copying another brand's work.
 
@@ -88,9 +90,9 @@ The workflow does not invent names, claims, colors, copy, mockup types, or cultu
 | Skill | What it does |
 |---|---|
 | [`lets-brand`](skills/lets-brand/SKILL.md) | Leads the interview, protects the identity file, researches references, and writes the prompt pack. |
-| [`brand-identity`](skills/brand-identity/SKILL.md) | Builds the approved identity brief and exact color palette in `brand identity.txt` when absent. |
+| [`brand-identity`](skills/brand-identity/SKILL.md) | Builds the approved strategy and coherent identity system, including exact palette roles, in `brand identity.txt` when absent. |
 | [`logo-prompting`](skills/logo-prompting/SKILL.md) | Writes prompts for logo concepts, refinement, and visual logo-guideline boards. |
-| [`mockup-prompting`](skills/mockup-prompting/SKILL.md) | Visually researches global and Arabic case studies, then writes prompts for relevant mockups. |
+| [`mockup-prompting`](skills/mockup-prompting/SKILL.md) | Visually researches global and Arabic case studies, then writes asset-bound prompts that use the approved logo, palette/system, and real product references. |
 | [`brand-presentation`](skills/brand-presentation/SKILL.md) | Prepares a coding-agent prompt for a standalone HTML brand presentation. |
 | [`banner-design`](skills/banner-design/SKILL.md) | Creates prompts for posters, launches, social posts, ads, and web heroes. |
 | [`brand-guidelines-doc`](skills/brand-guidelines-doc/SKILL.md) | Prepares prompts for a practical written guide or visual guidelines board. |
@@ -113,8 +115,8 @@ Choose only the materials relevant to the brand and project:
 
 - Use exact approved hex values and approved spelling from the locked brief.
 - Name the country or region for any real-world setting, person, or location.
-- Attach the approved logo and reference assets when the image tool supports them.
-- If a generator may distort Arabic lettering or the supplied logo, reserve clean space for the real assets to be added afterward.
+- Name and attach the approved logo and palette/design-system references in each mockup prompt; state what each uploaded file should control.
+- If a generator may distort Arabic lettering or the supplied logo, use an image-editing/compositing step or reserve a clearly provisional placement area for the exact supplied asset. Do not present a missing or fabricated logo as the finished brand mockup.
 - State composition, subject, lighting, camera angle, hierarchy, materials, output dimensions, exclusions, and review criteria when relevant.
 
 ## Reference libraries
@@ -122,6 +124,7 @@ Choose only the materials relevant to the brand and project:
 - [Brand Design Reference Library](skills/shared-references/brand-design-reference-library.md) — 60 general brand-design precedents.
 - [Arabic Brand Design Reference Library](skills/shared-references/arabic-brand-design-reference-library.md) — 50 Arabic-market projects: 36 Egypt-centered examples and 14 from Saudi Arabia, the UAE, and Lebanon.
 - [Visual Analysis Workflow](skills/shared-references/visual-analysis-workflow.md) — a method for checking sources and separating observation from interpretation.
+- [Complete Brand System Framework](skills/brand-identity/references/identity-system-framework.md) — strategy-to-design-system completeness, premium positioning, and beauty/cosmetics identity checks.
 
 For mockup work, the agent must open and visually inspect at least **five global and five Arabic-market projects** from these libraries. It records direct links, observations, visual-inspection status, transferable methods, and what must not be copied in `prompts.md`. Search snippets, titles, and text-only summaries do not count as image inspection. The agent follows the `agent-reach` skill for source access; if the images remain unavailable, it adds the Agent Reach note above and marks the affected prompts provisional.
 

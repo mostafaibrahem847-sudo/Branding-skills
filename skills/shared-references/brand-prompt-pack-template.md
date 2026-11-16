@@ -15,6 +15,8 @@ Approved story, promise, proof, supplied copy:
 Locked palette: #HEX — role; #HEX — role; ...
 Locked typography / script behavior:
 Approved logo files and variants:
+Approved visual system/palette board file (if supplied):
+Product/package artwork or photographs (if supplied):
 Selected modules:
 Target tools, aspect ratios, placements, output format:
 Must preserve:
@@ -46,7 +48,9 @@ PROMPT TYPE: image generation / image editing / HTML build / written guideline
 TOOL OR RECIPIENT:
 PURPOSE:
 APPROVED INPUTS: [include only facts and assets from the locked brief]
-SOURCE ASSETS: [exact file names; say which files must be attached]
+ATTACH BEFORE RUNNING: [exact filenames; mark required vs optional]
+REFERENCE ROLES: [logo = exact mark; palette/system board = colors and visual language; product/package art = only the actual product shown; inspiration = one named transferable method, never artwork to copy]
+TEXT SPECIFICATION: [brand identity.txt or exact locked facts to paste when the tool cannot read text attachments]
 DELIVERABLE: [what the result should contain]
 AUDIENCE AND CONTEXT:
 STORY / MESSAGE:
@@ -55,7 +59,7 @@ COMPOSITION AND HIERARCHY:
 MATERIALS / ENVIRONMENT / LIGHT / CAMERA: [only as relevant]
 BRAND COLOR SPECIFICATION: [exact approved hex values and roles]
 TYPE AND COPY: [exact approved text; if the generator cannot render it, leave a clean area for later typesetting]
-LOGO FIDELITY: [attach approved logo; preserve exact shape and spelling; otherwise generate unbranded space for manual placement]
+LOGO FIDELITY: [name the exact attached logo file and tell the image tool to use the uploaded image as the exact, visible logo reference; preserve spelling/shape/proportions. If the actual mark cannot be rendered faithfully, request an edit/compositing step or clearly provisional placement area; never present a missing or fabricated logo as final]
 SIZE / ASPECT RATIO / SAFE AREA:
 OUTPUT AND TECHNICAL REQUIREMENTS:
 NEGATIVE CONSTRAINTS: [relevant errors only; include no fake logo/text/watermark as needed]
@@ -66,7 +70,10 @@ QUALITY CHECK: [legibility, crop, script, contrast, brand fit, originality, asse
 
 - A prompt must be specific enough to run without the agent inventing context, but it must not contain unsupported facts. Keep unresolved fields visible and ask before completing the affected prompt.
 - Use exact hex values from the approved brief. If the generator may drift, specify both palette roles and the surfaces on which each color appears.
-- Attach an approved logo as an image/reference input where supported. If exact Arabic/Latin lettering cannot be preserved, request a clean unbranded surface and composite the real logo and copy in a design tool.
+- Attach an approved logo as an image/reference input where supported and name the exact file in each relevant prompt. If exact Arabic/Latin lettering cannot be preserved, use image editing/compositing with the approved asset or request a clearly provisional, accurately placed blank area. Do not present an unbranded output or fabricated logo as the final branded result.
+- For mockups, state inside each prompt: `Use the uploaded [exact logo filename] as the exact logo reference and keep it visibly applied`; name the uploaded palette/design-system board as the visual system reference when available; repeat the exact HEX values and roles in text. Do not merely mention the brand or logo without identifying the file to attach.
+- If the palette exists only in `brand identity.txt`, do not claim an image was attached. Paste the exact approved HEX/role specification into the prompt; if the image tool cannot accept text attachments, include those values directly. Ask for a palette/system board if its visual guidance is important and absent.
+- Give every attached reference one clear role. Do not let an inspiration image override the user's logo, palette, package artwork, or design rules.
 - Tell the model what to render, what should remain blank, where the focal point sits, how the crop works, and what is excluded. Avoid huge keyword piles and contradictory adjectives.
 - For real people and locations, specify the approved country/region and user-confirmed details. Do not use cultural stereotypes as shortcuts.
 - Keep image generation separate from production claims: a visual mockup does not validate print mechanics, materials, safety, or regulatory copy.

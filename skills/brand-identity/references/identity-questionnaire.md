@@ -16,6 +16,22 @@ Ask for these, in this order. Skip a field only if the user has clearly already 
 6. **Customer promise and proof** — what changes for the customer, and what real product, service, expertise, process, or experience supports that claim? Do not write unsupported marketing claims.
 7. **Differentiation and reference brands** — what should feel familiar within the category, and what should be distinct? If the user requests a visual scan, log credited examples using `../../shared-references/visual-analysis-workflow.md` and discuss methods, not copied assets.
 8. **Touchpoints and constraints** — where customers meet the brand, language and script needs, accessibility requirements, production/budget limits, existing assets, regulatory boundaries, and any fixed colors or fonts.
+9. **System completeness** — which logo versions, graphic assets, packaging or product rules, image behavior, voice behavior, and application rules already exist? Which does the user expect this identity to establish? Ask for exact asset filenames and approval status.
+10. **Tier and experience** — what price/experience tier is intended, and what should make the audience perceive that value? Ask for a concrete desired customer impression; do not equate “premium” with a preset palette or style.
+
+## Cosmetics and beauty follow-up
+
+Use only for beauty/cosmetics projects, and ask only what is in scope:
+
+- Which category is this: skincare, makeup, haircare, fragrance, body care, or another specific offer?
+- Which exact products are confirmed, and what is the hero product? What variants, sizes, shades, or scents are approved?
+- What is the approved variant-coding rule, or is it still open?
+- What customer need, verified product proof, and market/price tier should the design communicate?
+- What package formats, product photographs, label artwork, dimensions, materials, finishes, copy, or dielines already exist?
+- Which claims, ingredients, origin, clinical/testing language, certifications, warnings, or regulatory content have approved source copy? Which must remain blank/open?
+- Which touchpoints matter: primary pack, carton, set, shipping, shelf/display, product listing, or campaign? Do not assume every format is required.
+
+Do not fill a missing product detail with a beauty-category convention. Mark unknowns as open; identity and mockup prompts must not invent SKUs, shade names, ingredients, efficacy, safety, or regulatory copy.
 
 ## What NOT to ask
 
@@ -23,7 +39,7 @@ Don't interrogate the user with a rigid form if they've already volunteered most
 
 ## Output shape
 
-Always end this step with the confirmed brief in the compact block format from `SKILL.md` — that block is what gets pasted into (or re-read from) the project's `AGENTS.md`/`brief.md`, and every later skill in this collection expects to find it there. Mark details as locked, provisional, or still open; only locked details may be used as facts in downstream prompts.
+Always end this step with the confirmed brief and system fields from `SKILL.md` and `identity-system-framework.md`. Mark details as locked, proposed, or open; only locked details may be used as facts in downstream prompts. For a full identity, preserve the approved system in `brand identity.txt` so every later skill has one consistent source of truth.
 
 ## Compact intake wording
 
