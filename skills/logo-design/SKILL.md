@@ -21,7 +21,7 @@ For name-only typography, route to `../logo-text/SKILL.md`. For a small revision
 
 ## Read before acting
 
-Read the approved `brand identity.txt` or brand brief, the confirmed direction from `../logo-guidelines/SKILL.md`, `references/logo-design-interview.md`, `references/logo-concept-prompt.md`, `../logo-prompting/references/common-pitfalls.md`, and the relevant rows from `../shared-references/logo-design-reference-library.md`. Use `../shared-references/visual-analysis-workflow.md` for research evidence.
+Read `references/reference.md`, `../shared-references/research-reference-standard.md`, the approved `brand identity.txt` or brand brief, the confirmed direction from `../logo-guidelines/SKILL.md`, `references/logo-design-interview.md`, `references/logo-concept-prompt.md`, `../logo-prompting/references/common-pitfalls.md`, and the relevant rows from `../shared-references/logo-design-reference-library.md`. Use `../shared-references/visual-analysis-workflow.md` for research evidence.
 
 ## Workflow
 

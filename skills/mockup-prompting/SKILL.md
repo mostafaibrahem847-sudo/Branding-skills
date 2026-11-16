@@ -19,7 +19,7 @@ Write precise image-generation or compositing prompts that place an approved bra
 
 ## Step 0 — Audit and lock before writing
 
-Read `../shared-references/brand-intake-interview.md`, `references/mockup-types-by-business.md`, and `references/prompt-patterns.md`. Inspect `brand identity.txt` if present, approved logo files, product imagery, campaign assets, current mockups, and existing `prompts.md`.
+Read `references/reference.md`, `../shared-references/research-reference-standard.md`, `../shared-references/brand-intake-interview.md`, `references/mockup-types-by-business.md`, and `references/prompt-patterns.md`. Inspect `brand identity.txt` if present, approved logo files, product imagery, campaign assets, current mockups, and existing `prompts.md`.
 
 - If `brand identity.txt` is missing, use `../brand-identity/SKILL.md` to interview and create it after user approval. Never write a mockup prompt from an incomplete brief.
 - If the identity file exists, use it as the source of truth; do not create or overwrite it. Ask about conflicts instead of guessing.

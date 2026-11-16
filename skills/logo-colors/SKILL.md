@@ -21,7 +21,7 @@ For a new palette, use `../brand-identity/SKILL.md` first. For a logo concept, u
 
 ## Read before acting
 
-Read `brand identity.txt`, the actual approved logo/vector (if it exists), color approval status, exact color roles, intended backgrounds, `references/logo-color-variants.md`, and `../logo-guidelines/references/logo-guideline-structure.md`. Inspect supplied files rather than trusting filenames.
+Read `references/reference.md` and `../shared-references/research-reference-standard.md`; inspect `brand identity.txt`, the actual approved logo/vector (if it exists), color approval status, exact color roles, intended backgrounds, `references/logo-color-variants.md`, and `../logo-guidelines/references/logo-guideline-structure.md`. Inspect supplied files rather than trusting filenames.
 
 ## Workflow
 

@@ -4,7 +4,7 @@ This folder (`branding-skills/`) is a set of 12 skills for an interview-first, p
 
 ## What a "skill" means here
 
-Each skill folder under `skills/` is a self-contained instruction set: a `SKILL.md` (what it does, when to use it, its workflow and hard rules) plus a `references/` folder and sometimes `templates/`. These are plain Markdown files — there is no special runtime. **Reading a `SKILL.md` and its referenced files IS "activating" the skill.** When a skill's SKILL.md tells you to read `references/some-file.md` before doing something, actually read that file before proceeding — don't skip straight to generating output from the SKILL.md summary alone.
+Each skill folder under `skills/` is a self-contained instruction set: a `SKILL.md` plus a `references/` folder and sometimes `templates/`. Every skill's `references/reference.md` is mandatory and must be read together with `skills/shared-references/research-reference-standard.md` before acting. These are plain Markdown files — there is no special runtime. **Reading a `SKILL.md` and its referenced files IS "activating" the skill.** When a skill's SKILL.md tells you to read another file before doing something, actually read it — don't skip straight to generating output from the SKILL.md summary alone.
 
 ## The 12 skills
 
@@ -33,7 +33,7 @@ The default deliverable is a detailed prompt pack for the user's chosen image ge
 ## How to behave when a branding request comes in
 
 1. **Identify which stage is being asked for.** "Let's brand X" / "ابدأ مشروع براندينج" → load `skills/lets-brand/SKILL.md` and follow its staged workflow. A request for just one piece ("اديني برومبت لوجو", "اعمل الصفحة بتاعة البراند") → go straight to that skill's own `SKILL.md`.
-2. **Interview and audit before output.** Read `skills/shared-references/brand-intake-interview.md`; inspect any supplied `brand identity.txt`, logo, guidelines, copy, and project files first. Reuse facts already provided, ask only missing or conflicting details, and confirm a concise brand summary before producing prompts. When the user says “Let's brand,” do not paste prompts or long design details in chat: ask questions, confirm the brief, then put the prompt set in `prompts.md`. Never write a logo, mockup, poster, story, guideline, or presentation prompt without a locked brief for its required inputs.
+2. **Interview and audit before output.** Read `skills/shared-references/brand-intake-interview.md`; inspect any supplied `brand identity.txt`, logo, guidelines, copy, and project files first. Reuse facts already provided, ask only missing or conflicting high-impact details, and confirm a concise brand summary before producing prompts. Wait for approval before project-specific web/image research or output unless that exact scope is already approved. When the user says “Let's brand,” do not paste prompts or long design details in chat: ask questions, confirm the brief, then put the prompt set in `prompts.md`. Never write a logo, mockup, poster, story, guideline, or presentation prompt without a locked brief for its required inputs.
 3. **Follow the project folder convention** so every skill can find what the others produced:
    ```
    /project-name/
@@ -57,6 +57,11 @@ The default deliverable is a detailed prompt pack for the user's chosen image ge
 - After that approval, run `logo-design` and ask at least five or six unanswered logo-specific questions. Reuse the identity brief and do not repeat settled intake questions. If the user wants only lettering, use `logo-text` after confirming that route.
 - `logo-colors` uses only approved palette HEX values. `logo-pattern` requires an approved logo source and must derive from its real geometry. Both are optional modules and need user selection/approval.
 - If an approved logo already exists, do not start a new-concept workflow unless requested. `logo-guidelines` can document actual usage rules from the authoritative file, but must not invent dimensions or variants.
+
+### Research and skill routing
+
+- Every design-facing skill must research at least five distinct, relevant real projects and inspect the actual images before finalizing a direction or prompt. Read that skill's `references/reference.md` for its research focus, log observations and originality boundaries, and distinguish facts from interpretation. Search previews and library descriptions alone are not visual inspection. Follow `agent-reach` and stop on platform/login/rate-limit blocks. Mockup prompts retain the additional five-global plus five-Arabic requirement.
+- Each `references/reference.md` routes decisions to the correct next skill. A text-only logo goes to `logo-text`; a new symbol/combination goes through `logo-guidelines` then `logo-design`; an existing-mark revision goes to `logo-prompting`; a missing palette returns to `brand-identity`; a pattern requires an approved mark.
 
 ## Output constraints that apply across the whole collection
 

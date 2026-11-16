@@ -29,7 +29,7 @@ Run the project through an intake interview, a user-approved brand lock, direct 
 
 ### 1. Audit the project before asking questions
 
-Read `../shared-references/brand-intake-interview.md`. Inspect the project root and relevant asset folders for:
+Read `references/reference.md`, `../shared-references/research-reference-standard.md`, and `../shared-references/brand-intake-interview.md`. Inspect the project root and relevant asset folders for:
 
 - `brand identity.txt` and `prompts.md`
 - Approved logo files and variants

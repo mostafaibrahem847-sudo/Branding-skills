@@ -28,7 +28,7 @@ When a locked brand brief already exists (from the sibling `brand-identity` skil
 
 ## Available Resources
 
-Use `references/banner-sizes-and-styles.md` for banner art direction, `references/campaign-poster-prompt.md` for poster/key-visual prompts, and official platform/printer documentation for current format requirements. Platform specifications change: verify the current official requirements for the requested placement before choosing a canvas or safe area, and include the checked source in the handoff. For inspiration, use both shared design reference libraries and `../shared-references/visual-analysis-workflow.md`; adapt principles without copying a recognizable asset.
+Before acting, read `references/reference.md` and `../shared-references/research-reference-standard.md`. Use `references/banner-sizes-and-styles.md` for banner art direction, `references/campaign-poster-prompt.md` for poster/key-visual prompts, and official platform/printer documentation for current format requirements. Platform specifications change: verify the current official requirements for the requested placement before choosing a canvas or safe area, and include the checked source in the handoff. For inspiration, use both shared design reference libraries and `../shared-references/visual-analysis-workflow.md`; adapt principles without copying a recognizable asset.
 
 ## Workflow
 

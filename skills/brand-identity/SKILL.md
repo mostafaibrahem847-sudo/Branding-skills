@@ -9,7 +9,7 @@ metadata:
 
 # Brand Identity — The Source of Truth
 
-This skill establishes the approved facts and visual direction used by every later prompt. Before drafting any output, read `../shared-references/brand-intake-interview.md`, `references/identity-questionnaire.md`, `references/personality-archetypes.md`, `references/brief-authoring-prompt.md`, and `references/identity-system-framework.md`.
+This skill establishes the approved facts and visual direction used by every later prompt. Before drafting any output, read `references/reference.md`, `../shared-references/research-reference-standard.md`, `../shared-references/brand-intake-interview.md`, `references/identity-questionnaire.md`, `references/personality-archetypes.md`, `references/brief-authoring-prompt.md`, and `references/identity-system-framework.md`.
 
 ## When to Use
 

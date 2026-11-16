@@ -21,7 +21,7 @@ For a symbol plus name, use `../logo-design/SKILL.md`. For symbol-based repeat p
 
 ## Read before acting
 
-Inspect the locked brand brief, exact approved spelling in all scripts, name pronunciation/meaning if owner-confirmed, palette, competitors/rejected options, current logo files, and the approved Logo Direction Guidelines. Read `references/wordmark-interview.md`, `references/wordmark-prompt.md`, `../logo-prompting/references/common-pitfalls.md`, and relevant Arab-script references in `../shared-references/logo-design-reference-library.md`.
+Read `references/reference.md` and `../shared-references/research-reference-standard.md`; inspect the locked brand brief, exact approved spelling in all scripts, name pronunciation/meaning if owner-confirmed, palette, competitors/rejected options, current logo files, and the approved Logo Direction Guidelines. Then read `references/wordmark-interview.md`, `references/wordmark-prompt.md`, `../logo-prompting/references/common-pitfalls.md`, and relevant Arab-script references in `../shared-references/logo-design-reference-library.md`.
 
 ## Workflow
 

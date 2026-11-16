@@ -19,7 +19,7 @@ Create a practical, evidence-led rule set for a logo project. This skill has two
 
 ## Read before acting
 
-1. Read `../shared-references/brand-intake-interview.md` and inspect `brand identity.txt`, `prompts.md`, supplied logo files, guidelines, and relevant project assets.
+1. Read `references/reference.md`, `../../shared-references/research-reference-standard.md`, and `../shared-references/brand-intake-interview.md`; inspect `brand identity.txt`, `prompts.md`, supplied logo files, guidelines, and relevant project assets.
 2. Read `../shared-references/visual-analysis-workflow.md`, `../shared-references/logo-design-reference-library.md`, and `references/logo-guideline-structure.md`.
 3. Use the research protocol in `references/logo-research-protocol.md` before offering a logo direction. For any new-logo project, inspect at least **five distinct, relevant project pages and their actual logo images**. Select a useful mix for the brand's category, market, script, and likely applications; the reference-library minimum is a research floor, not a reason to use irrelevant examples.
 

@@ -53,7 +53,7 @@ For a new logo, reserve the dedicated design questions for the stage after the u
 
 ### 3. Resolve critical gaps before drafting
 
-If a missing answer changes brand strategy, copy, color, audience, country/region, logo fidelity, selected deliverable, or production format, ask and wait. You may continue independent research or file inventory while waiting, but do not draft a dependent prompt using a guess.
+If a missing answer changes brand strategy, copy, color, audience, country/region, logo fidelity, selected deliverable, or production format, ask and wait. While waiting, continue only read-only local file inventory; do not begin project-specific web/image research, download references, or draft a dependent prompt using a guess. Reuse an already approved research and deliverable scope without asking the user to approve it twice.
 
 When several decisions are open, offer 2–3 short, clearly different options with their trade-offs. Keep proposals labelled **options**, not approved facts. For questions with a clear factual answer (such as exact logo text or platform placement), ask directly rather than inventing options.
 

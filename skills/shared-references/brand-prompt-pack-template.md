@@ -26,7 +26,7 @@ Open items (do not fill with guesses):
 
 ## Reference research record
 
-For a new-logo pack, inspect at least five relevant, distinct logo projects from `logo-design-reference-library.md`, open their direct source pages, and visually inspect the actual logo images. For a complete branding pack that includes mockups, also inspect five distinct global projects from `brand-design-reference-library.md` and five distinct Arabic-market projects from `arabic-brand-design-reference-library.md`. Do not count titles, snippets, image-search captions, text-only summaries, or thumbnails alone as visual inspection. Follow the `agent-reach` skill for supported source access and its read-only/access-limit rules. If any applicable threshold remains unmet, keep the affected prompts provisional and include:
+For every selected design module, inspect at least five relevant, distinct real project pages and visually inspect their actual images as described in that skill's `references/reference.md`. For a new-logo pack, use logo/wordmark/guideline sources from `logo-design-reference-library.md`. For a complete branding pack that includes mockups, also inspect five distinct global projects from `brand-design-reference-library.md` and five distinct Arabic-market projects from `arabic-brand-design-reference-library.md`. Do not count titles, snippets, image-search captions, text-only summaries, or thumbnails alone as visual inspection. Follow the `agent-reach` skill for supported source access and its read-only/access-limit rules. If any applicable threshold remains unmet, keep the affected prompts provisional and include:
 
 > NOTE: Use the Agent Reach skill to access and visually inspect the reference URLs before finalizing these prompts.
 

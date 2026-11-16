@@ -20,7 +20,7 @@ If no approved logo or vector/master asset exists, pause and route to `../logo-d
 
 ## Read before acting
 
-Inspect the approved `brand identity.txt`, the actual logo master, its usage constraints, palette, previous approvals, and the intended material/application. Read `references/logo-pattern-system.md`, `../logo-guidelines/references/logo-guideline-structure.md`, `../shared-references/logo-design-reference-library.md`, and `../shared-references/visual-analysis-workflow.md`. If the logo's source geometry is unclear, ask for the vector or a reliable high-resolution master.
+Read `references/reference.md` and `../shared-references/research-reference-standard.md`; inspect the approved `brand identity.txt`, the actual logo master, its usage constraints, palette, previous approvals, and the intended material/application. Then read `references/logo-pattern-system.md`, `../logo-guidelines/references/logo-guideline-structure.md`, `../shared-references/logo-design-reference-library.md`, and `../shared-references/visual-analysis-workflow.md`. If the logo's source geometry is unclear, ask for the vector or a reliable high-resolution master.
 
 ## Workflow
 
