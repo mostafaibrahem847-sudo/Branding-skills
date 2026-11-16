@@ -26,15 +26,15 @@ Open items (do not fill with guesses):
 
 ## Reference research record
 
-For a complete branding pack that includes mockups, inspect at least five distinct global projects from `brand-design-reference-library.md` and five distinct Arabic-market projects from `arabic-brand-design-reference-library.md`. Open each source URL and visually inspect the relevant identity/mockup images. Do not count titles, snippets, text-only summaries, or thumbnails alone. Follow the `agent-reach` skill for supported source access and its read-only/access-limit rules. If either group remains below five visually inspected projects, keep the affected prompts provisional and include:
+For a new-logo pack, inspect at least five relevant, distinct logo projects from `logo-design-reference-library.md`, open their direct source pages, and visually inspect the actual logo images. For a complete branding pack that includes mockups, also inspect five distinct global projects from `brand-design-reference-library.md` and five distinct Arabic-market projects from `arabic-brand-design-reference-library.md`. Do not count titles, snippets, image-search captions, text-only summaries, or thumbnails alone as visual inspection. Follow the `agent-reach` skill for supported source access and its read-only/access-limit rules. If any applicable threshold remains unmet, keep the affected prompts provisional and include:
 
 > NOTE: Use the Agent Reach skill to access and visually inspect the reference URLs before finalizing these prompts.
 
-Add one record per distinct project:
+Add one record per distinct project. Mark the study area separately so logo and mockup counts cannot be confused:
 
 | Region | Project and context | Direct URL | Page opened? | Images visually inspected? | Observation | Transferable method | Do not copy |
 |---|---|---|---|---|---|---|---|
-| Global / Arabic-market | ... | ... | Yes / No | Yes / No | ... | ... | ... |
+| Logo / pattern / guidelines; Global / Arabic-market | ... | ... | Yes / No | Yes / No | ... | ... | ... |
 
 Separate visible facts from interpretation. Mark conceptual, self-published, or unclear work. Never claim a project launched or succeeded unless the source proves it.
 
@@ -74,6 +74,7 @@ QUALITY CHECK: [legibility, crop, script, contrast, brand fit, originality, asse
 - For mockups, state inside each prompt: `Use the uploaded [exact logo filename] as the exact logo reference and keep it visibly applied`; name the uploaded palette/design-system board as the visual system reference when available; repeat the exact HEX values and roles in text. Do not merely mention the brand or logo without identifying the file to attach.
 - If the palette exists only in `brand identity.txt`, do not claim an image was attached. Paste the exact approved HEX/role specification into the prompt; if the image tool cannot accept text attachments, include those values directly. Ask for a palette/system board if its visual guidance is important and absent.
 - Give every attached reference one clear role. Do not let an inspiration image override the user's logo, palette, package artwork, or design rules.
+- For a new logo, follow the staged route: research-led pre-design guidelines → user approval → at least five or six unanswered logo-specific questions → confirmed route → logo concept/wordmark prompt. A text-only wordmark has no icon unless requested. A logo-derived pattern requires an approved master; logo color prompts use approved HEX values only.
 - Tell the model what to render, what should remain blank, where the focal point sits, how the crop works, and what is excluded. Avoid huge keyword piles and contradictory adjectives.
 - For real people and locations, specify the approved country/region and user-confirmed details. Do not use cultural stereotypes as shortcuts.
 - Keep image generation separate from production claims: a visual mockup does not validate print mechanics, materials, safety, or regulatory copy.

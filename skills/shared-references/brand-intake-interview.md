@@ -36,18 +36,20 @@ Ask only for missing, decision-critical information. Group questions so the user
 
 #### Visual system and source files
 
-- Which logo files and variants are approved, and what must not be redrawn or altered?
+- Which logo files and variants are approved, and what must not be redrawn or altered? If no approved logo exists, mark that clearly; the first logo stage will research precedents and confirm a Logo Direction Guide before the separate logo-design interview.
 - Exact approved hex colors and roles; exact typefaces/scripts if known. If either is not locked, ask whether the user wants options proposed for approval before any generation prompt.
 - Existing guidelines, competitor references, prior outputs, licensed imagery, and “must avoid” directions.
 
 #### Deliverables and use
 
-- Which prompt outputs are wanted now: logo concept/refinement, visual logo-guideline board, mockups, product or campaign posters, social/ad banners, story-led imagery, standalone HTML presentation build prompt, or written guideline document prompt?
+- Which prompt outputs are wanted now: logo concept/refinement, text-only wordmark, logo color variants, logo-derived pattern, pre-design Logo Direction Guidelines, post-design visual logo-guideline board, mockups, product or campaign posters, social/ad banners, story-led imagery, standalone HTML presentation build prompt, or written guideline document prompt?
 - For each image: the target generator if known, aspect ratio or platform, number of variants, and whether it is a clean presentation mockup or marketing scene.
 - For each code-agent prompt: should the recipient create the HTML file, or should it only review the files and return an implementation plan?
 - Exact approved headline/CTA/legal copy, or permission to draft copy as unapproved options.
 
 Do not ask every sub-question when the user has already answered it. If the user asks for a full prompt pack, confirm the selected deliverables and create a compact inventory; do not bury the user in unrelated production questions.
+
+For a new logo, reserve the dedicated design questions for the stage after the user has reviewed and approved the research-based Logo Direction Guidelines. At that point, `logo-design` (or `logo-text` for a name-only route) asks at least five or six unanswered logo-specific decisions. Reuse the brand answers above instead of repeating them.
 
 ### 3. Resolve critical gaps before drafting
 
@@ -90,5 +92,7 @@ Keep open items visible. Ask the user to correct the summary or approve it befor
 Use the approved summary as the single source of truth for every selected prompt. For a full branding workflow, create `brand identity.txt` in the project root only if absent; if it already exists, use it and do not recreate or overwrite it. Write all requested prompt modules to `prompts.md`, preserving unrelated approved content if that file already exists. If later answers change the brief, update the identity lock only after approval and regenerate only affected prompt sections.
 
 Before mockup prompts, complete the required visual scan: at least five distinct global source pages and five distinct Arabic-market source pages, opened and visually inspected. Follow `../visual-analysis-workflow.md` and the `agent-reach` skill's access rules. If a source image cannot be inspected, it does not count; add the required Agent Reach note to `prompts.md` and leave affected prompts provisional.
+
+Before new-logo prompts, complete a separate scan of at least five relevant logo project pages and visually inspect their actual marks/guideline images. Follow `logo-design-reference-library.md` and the relevant logo skill's research protocol. Keep image-search captions and page text separate from visual observations. If the images cannot be inspected, add the exact Agent Reach note to `prompts.md`, list affected links, and leave the direction provisional.
 
 After writing files, reply only with a concise completion note and paths. Do not paste prompt contents into chat.

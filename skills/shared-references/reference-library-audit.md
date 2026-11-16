@@ -4,13 +4,14 @@
 
 - Global library: 60 distinct listed projects. Twelve similar food/hospitality entries were replaced with references in aviation, fintech, higher education, healthcare, pet care, sport, museums, and real estate.
 - Arabic-market library: 50 distinct Behance project IDs; all 50 entries now link to Behance project pages. The set is Egypt-led and covers 20+ sectors. It contains 40 Egypt-focused cases, 9 Saudi-market cases, and 1 Qatar event identity.
-- Two projects intentionally appear in both libraries: Design Doha and Summer 24. Across the two lists, that yields 108 distinct reference entries after cross-library de-duplication.
+- Logo-design library: 27 distinct Behance project pages for logo guidelines, marks, wordmarks, color variants, and logo-derived patterns. The entries are a discovery shortlist, not a set of visually verified case studies.
+- Two projects intentionally appear in both brand-design libraries: Design Doha and Summer 24. Across the three lists, do not add raw counts together as unique projects; de-duplicate by canonical project page where the libraries overlap.
 
 ## Research method and access status
 
 Public web search and Behance-indexed project results were used to find and confirm project titles, direct page URLs, stated market/context, and text descriptions. The Agent Reach skill was used as the intended read-only access route, but its local command could not reach Behance in this environment because of DNS/network and local lock-file permission failures. Direct automated page opens also returned HTTP 403 for some Behance pages. Those outcomes are access blocks, not evidence of deleted projects, so they were not treated as broken-link confirmations.
 
-**Visual inspection status: 0 project pages were visually inspected at image-pixel level during this snapshot audit.** Search snippets, page text, titles, and image-module metadata are not visual inspection. Accordingly, the library's “Study angle” text is a research prompt based on project title/description and category, not a claim that a specific visual detail was observed. Before using a reference to make detailed visual claims or to guide a brand prompt, open the actual project images with Agent Reach or another image-capable browser and record the visual inspection.
+**Visual inspection status:** the existing global and Arabic-market library audit recorded 0 direct page-level image inspections. The logo library was assembled using project metadata and image-search previews; its per-entry preview notes are explicitly provisional, and direct page-level inspection is pending. Search snippets, page text, titles, and image-module metadata do not count as direct visual inspection. Before using a reference to make detailed visual claims or to guide a brand prompt, open the actual project images with Agent Reach or another image-capable browser and record the visual inspection.
 
 ## Example source notes: observation vs interpretation
 
@@ -26,4 +27,4 @@ Public web search and Behance-indexed project results were used to find and conf
 
 ## Maintenance decision
 
-Keep the two canonical libraries unchanged during scheduled audits. The weekly job should write a dated proposal containing candidate sources, direct links, market/category, source-stated project status, de-duplication check, access status, and a clearly separated observation/interpretation. A maintainer reviews and approves the proposal before any entry is added, removed, or replaced. A 403, login wall, or network error must be recorded as blocked/inaccessible rather than “dead”; only a confirmed removed page or not-found response justifies a broken-link label.
+Keep the three canonical libraries unchanged during scheduled audits. The weekly job should write a dated proposal containing candidate sources, direct links, market/category, source-stated project status, de-duplication check, access status, and a clearly separated observation/interpretation. A maintainer reviews and approves the proposal before any entry is added, removed, or replaced. A 403, login wall, or network error must be recorded as blocked/inaccessible rather than “dead”; only a confirmed removed page or not-found response justifies a broken-link label.

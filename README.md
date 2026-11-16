@@ -7,7 +7,7 @@
 Create a clear brand brief, then turn it into detailed, production-ready prompts for logos, mockups, campaigns, visual guidelines, and presentations.
 
 [![Agent Ready](https://img.shields.io/badge/AI_Agent-Ready-6C5CE7?style=for-the-badge)](#supported-agents)
-[![Markdown](https://img.shields.io/badge/Format-Markdown-2563EB?style=for-the-badge&logo=markdown&logoColor=white)](#the-seven-skills)
+[![Markdown](https://img.shields.io/badge/Format-Markdown-2563EB?style=for-the-badge&logo=markdown&logoColor=white)](#the-twelve-skills)
 [![Arabic Research](https://img.shields.io/badge/Research-Arabic_Market-00856A?style=for-the-badge)](#reference-libraries)
 [![npm version](https://img.shields.io/npm/v/branding-skills?style=for-the-badge)](https://www.npmjs.com/package/branding-skills)
 
@@ -17,7 +17,7 @@ Create a clear brand brief, then turn it into detailed, production-ready prompts
 
 ## Overview
 
-Branding Skills is a collection of seven reusable skills for Codex, Claude Code, and other agents that can read Markdown. It interviews the user, locks the brand brief, researches real visual references, and prepares detailed prompts for image-generation tools or coding agents.
+Branding Skills is a collection of twelve reusable skills for Codex, Claude Code, and other agents that can read Markdown. It interviews the user, locks the brand brief, researches real visual references, and prepares detailed prompts for image-generation tools or coding agents.
 
 > **File-first by design:** during “Let's brand,” the agent asks questions and confirms the brief in chat, then writes `brand identity.txt` only if it is missing and saves all requested prompts in `prompts.md`. It does not paste the prompt pack into chat. Images, HTML, and guideline documents are created only when you explicitly request those artifacts.
 
@@ -31,6 +31,7 @@ Branding Skills is a collection of seven reusable skills for Codex, Claude Code,
 - 🖼️ **Bind mockups to real assets:** name the exact logo, palette/system board, and product files to upload, and tell image tools how to use each reference.
 - 🤝 **Keep the user in control:** review each stage before continuing to another deliverable.
 - 🌍 **Use relevant references:** draw on global and Arabic-market case studies without copying another brand's work.
+- 🔠 **Handle logo work as a system:** research logo precedents first, ask logo-specific questions before concept prompts, and support wordmarks, exact-color variants, and logo-derived patterns.
 
 ## Supported agents
 
@@ -46,7 +47,7 @@ git clone https://github.com/mostafaibrahem847-sudo/Branding-skills.git
 
 Open the cloned folder in your coding agent and ask it to follow [`skills/lets-brand/SKILL.md`](skills/lets-brand/SKILL.md). For a single deliverable, open the matching skill listed below.
 
-Claude Code users can copy the skills into the project-level discovery folder. Keep `shared-references/` beside the seven skill folders so their relative links continue to work.
+Claude Code users can copy the skills into the project-level discovery folder. Keep `shared-references/` beside all twelve skill folders so their relative links continue to work.
 
 ```powershell
 New-Item -ItemType Directory -Force .claude/skills | Out-Null
@@ -80,18 +81,27 @@ npx skills add https://github.com/mostafaibrahem847-sudo/Branding-skills
 2. **Interview** the user about decision-critical gaps: offer, market, audience, brand story, language and dialect, colors, assets, channels, and desired deliverables.
 3. **Confirm** a concise brand summary. Reuse known facts; do not ask the user to repeat them.
 4. **Create the identity file only if missing.** Preserve an existing `brand identity.txt`; after approval, create it only when absent, including the exact approved colors and their roles.
-5. **Research before prompts.** For mockup work, open and visually inspect five distinct global and five distinct Arabic-market reference projects before drafting.
+5. **Research before prompts.** For a new logo, inspect at least five relevant logo project pages and their actual logo images. For mockup work, inspect five distinct global and five distinct Arabic-market projects. Follow Agent Reach access rules; report anything that could not be visually checked.
 6. **Write `prompts.md`.** Put every requested prompt in this file, with source links and observations. Keep prompt contents out of chat.
 
 The workflow does not invent names, claims, colors, copy, mockup types, or cultural details. If an unknown detail could materially change the result, the agent asks before proceeding. If reference images cannot be accessed, the agent adds the note `NOTE: Use the Agent Reach skill to access and visually inspect the reference URLs before finalizing these prompts.` and identifies what remains unverified.
 
-## The seven skills
+### New logo workflow
+
+When no approved logo exists, run [`logo-guidelines`](skills/logo-guidelines/SKILL.md) first. It researches direct project pages and produces a user-reviewable logo direction guide. After approval, [`logo-design`](skills/logo-design/SKILL.md) asks at least five or six unanswered logo decisions and prepares the concept prompt. Route a name-only logo to [`logo-text`](skills/logo-text/SKILL.md). Add [`logo-colors`](skills/logo-colors/SKILL.md) only for approved palette variants and [`logo-pattern`](skills/logo-pattern/SKILL.md) only after a logo is approved. Existing-logo usage guidance stays in `logo-guidelines` post-design mode.
+
+## The twelve skills
 
 | Skill | What it does |
 |---|---|
 | [`lets-brand`](skills/lets-brand/SKILL.md) | Leads the interview, protects the identity file, researches references, and writes the prompt pack. |
 | [`brand-identity`](skills/brand-identity/SKILL.md) | Builds the approved strategy and coherent identity system, including exact palette roles, in `brand identity.txt` when absent. |
-| [`logo-prompting`](skills/logo-prompting/SKILL.md) | Writes prompts for logo concepts, refinement, and visual logo-guideline boards. |
+| [`logo-guidelines`](skills/logo-guidelines/SKILL.md) | Researches logo precedents and sets the pre-design direction; documents verified use rules for an approved mark. |
+| [`logo-design`](skills/logo-design/SKILL.md) | Interviews for logo-specific decisions and writes one focused, original logo-concept prompt. |
+| [`logo-text`](skills/logo-text/SKILL.md) | Creates language-aware prompts for Arabic, Latin, or bilingual text-only wordmarks. |
+| [`logo-colors`](skills/logo-colors/SKILL.md) | Specifies approved full-color, monochrome, reverse, and contrast-tested logo variants. |
+| [`logo-pattern`](skills/logo-pattern/SKILL.md) | Derives a repeatable secondary pattern from an approved logo's actual geometry. |
+| [`logo-prompting`](skills/logo-prompting/SKILL.md) | Refines existing logo files or repairs a failed AI logo prompt. |
 | [`mockup-prompting`](skills/mockup-prompting/SKILL.md) | Visually researches global and Arabic case studies, then writes asset-bound prompts that use the approved logo, palette/system, and real product references. |
 | [`brand-presentation`](skills/brand-presentation/SKILL.md) | Prepares a coding-agent prompt for a standalone HTML brand presentation. |
 | [`banner-design`](skills/banner-design/SKILL.md) | Creates prompts for posters, launches, social posts, ads, and web heroes. |
@@ -103,7 +113,9 @@ The [`shared-references`](skills/shared-references/) folder supports these skill
 
 Choose only the materials relevant to the brand and project:
 
-- Logo concept, refinement, and usage-board prompts.
+- Research-based logo direction guidelines, logo concepts, and existing-mark revisions.
+- Text-only Arabic, Latin, or bilingual wordmark prompts.
+- Logo color-variant and logo-derived pattern prompts, based on approved assets and palette values.
 - Product, packaging, retail, and digital mockup prompts.
 - Campaign, launch, event, and story-led poster prompts.
 - Social, advertising, and website-hero visual prompts.
@@ -121,13 +133,14 @@ Choose only the materials relevant to the brand and project:
 
 ## Reference libraries
 
+- [Logo Design Reference Library](skills/shared-references/logo-design-reference-library.md) — 27 distinct project pages for logo design, Arabic/Latin wordmarks, logo patterns, colors, and guidelines. Preview notes are discovery aids; the agent must open the direct source and inspect actual images for the current task.
 - [Brand Design Reference Library](skills/shared-references/brand-design-reference-library.md) — 60 global brand-design precedents selected across varied sectors.
 - [Arabic Brand Design Reference Library](skills/shared-references/arabic-brand-design-reference-library.md) — 50 Behance project pages for Arabic-market references: 40 Egypt-focused, 9 Saudi-market, and 1 Qatar event identity, across varied sectors.
 - [Visual Analysis Workflow](skills/shared-references/visual-analysis-workflow.md) — a method for checking sources and separating observation from interpretation.
 - [Reference Library Audit](skills/shared-references/reference-library-audit.md) — current counts, source-access limits, and research-quality notes for the latest snapshot.
 - [Complete Brand System Framework](skills/brand-identity/references/identity-system-framework.md) — strategy-to-design-system completeness, premium positioning, and beauty/cosmetics identity checks.
 
-For mockup work, the agent must open and visually inspect at least **five global and five Arabic-market projects** from these libraries. It records direct links, observations, visual-inspection status, transferable methods, and what must not be copied in `prompts.md`. Search snippets, titles, and text-only summaries do not count as image inspection. The agent follows the `agent-reach` skill for source access; if the images remain unavailable, it adds the Agent Reach note above and marks the affected prompts provisional.
+For new-logo work, the agent must open and visually inspect at least **five relevant logo projects** from the logo library. For mockup work, it must inspect at least **five global and five Arabic-market projects** from the brand libraries. Record direct links, observations, visual-inspection status, transferable methods, and what must not be copied in `prompts.md`. Search snippets, titles, thumbnails, and text-only summaries do not count as direct image inspection. Follow the `agent-reach` skill for source access; if images remain unavailable, add the Agent Reach note above and mark affected prompts provisional.
 
 The Agent Reach skill is a companion capability and may not be installed in every agent environment. When it is unavailable, the agent may use its native read-only web and visual tools. If it still cannot open and inspect the source images, it must report that limitation instead of claiming the reference scan is complete.
 
