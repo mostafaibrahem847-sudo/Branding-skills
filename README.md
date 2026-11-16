@@ -121,9 +121,10 @@ Choose only the materials relevant to the brand and project:
 
 ## Reference libraries
 
-- [Brand Design Reference Library](skills/shared-references/brand-design-reference-library.md) — 60 general brand-design precedents.
-- [Arabic Brand Design Reference Library](skills/shared-references/arabic-brand-design-reference-library.md) — 50 Arabic-market projects: 36 Egypt-centered examples and 14 from Saudi Arabia, the UAE, and Lebanon.
+- [Brand Design Reference Library](skills/shared-references/brand-design-reference-library.md) — 60 global brand-design precedents selected across varied sectors.
+- [Arabic Brand Design Reference Library](skills/shared-references/arabic-brand-design-reference-library.md) — 50 Behance project pages for Arabic-market references: 40 Egypt-focused, 9 Saudi-market, and 1 Qatar event identity, across varied sectors.
 - [Visual Analysis Workflow](skills/shared-references/visual-analysis-workflow.md) — a method for checking sources and separating observation from interpretation.
+- [Reference Library Audit](skills/shared-references/reference-library-audit.md) — current counts, source-access limits, and research-quality notes for the latest snapshot.
 - [Complete Brand System Framework](skills/brand-identity/references/identity-system-framework.md) — strategy-to-design-system completeness, premium positioning, and beauty/cosmetics identity checks.
 
 For mockup work, the agent must open and visually inspect at least **five global and five Arabic-market projects** from these libraries. It records direct links, observations, visual-inspection status, transferable methods, and what must not be copied in `prompts.md`. Search snippets, titles, and text-only summaries do not count as image inspection. The agent follows the `agent-reach` skill for source access; if the images remain unavailable, it adds the Agent Reach note above and marks the affected prompts provisional.
@@ -131,6 +132,10 @@ For mockup work, the agent must open and visually inspect at least **five global
 The Agent Reach skill is a companion capability and may not be installed in every agent environment. When it is unavailable, the agent may use its native read-only web and visual tools. If it still cannot open and inspect the source images, it must report that limitation instead of claiming the reference scan is complete.
 
 Some references are self-published, conceptual, or unclear about launch status. The libraries label known uncertainty and link to public case pages. Use references to study design methods; do not copy another brand's logo, palette, typeface, illustration, layout, or signature device.
+
+## Reference maintenance
+
+The reference libraries are reviewed weekly. A scheduled review prepares a proposed additions/removals report for a maintainer to review; it must not edit the canonical libraries or commit changes before approval. Keep the general library at 60 diverse projects and the Arabic-market library at 50 unique Behance project pages. Prefer a broad sector mix, with the Arabic set led by Egyptian and other Arab-market work. Check the canonical project page and its market/category before proposing an entry, classify concept/client status only as far as the source supports, and distinguish a genuine missing page from a 403, login wall, or temporary network block. For visual claims, open and inspect the actual project images with Agent Reach; search results and text snippets do not count as visual inspection.
 
 ## Recommended project structure
 

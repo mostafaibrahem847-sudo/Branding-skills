@@ -17,7 +17,7 @@ Each skill folder under `skills/` is a self-contained instruction set: a `SKILL.
 | `brand-presentation/` | Step 4 — assembling everything into one single-page, Behance-style HTML file |
 | `banner-design/` | Optional — social/ad/web-hero banners at correct platform sizes |
 | `brand-guidelines-doc/` | Optional — a written guidelines document (voice, usage rules, checklists) |
-| `shared-references/` | Shared resource — 60 general and 50 Arabic-market design references, intake interview, prompt-pack template, and visual-research method |
+| `shared-references/` | Shared resource — 60 diverse global and 50 Behance-only Arabic-market design references, intake interview, prompt-pack template, and visual-research method |
 
 Full detail on each is in `README.md` and inside each skill's own `SKILL.md`.
 
@@ -66,4 +66,4 @@ The default deliverable is a detailed prompt pack for the user's chosen image ge
 
 See `README.md` for install locations per agent and more usage examples.
 
-`skills/shared-references/` is a common resource folder, not an eighth skill. Keep it beside all seven skill folders so cross-skill links resolve. It contains two reference libraries with 60 general and 50 Arabic-market projects, plus the intake interview, prompt-pack template, and research method. Use the examples to understand design methods; do not copy distinctive artwork, and mark portfolio/concept work as such.
+`skills/shared-references/` is a common resource folder, not an eighth skill. Keep it beside all seven skill folders so cross-skill links resolve. It contains two reference libraries with 60 diverse global projects and 50 Arabic-market Behance projects, plus the intake interview, prompt-pack template, and research method. Use the examples to understand design methods; do not copy distinctive artwork, and mark portfolio/concept work as such. A scheduled weekly audit prepares a proposal only: do not add, remove, or rewrite canonical reference entries until a maintainer reviews the proposal. A 403 or login wall is not proof that a link is dead; distinguish access blocks from confirmed missing pages.
